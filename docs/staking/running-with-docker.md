@@ -51,9 +51,16 @@ go: go version go1.13.4 darwin/amd64
 
 ### Step 3: Run docker for Bor
 
-TBD
+#### Start docker container for Bor
 
-<!-- #CHECK following step is the same as in running-with-binaries -->
+```
+docker run --name matic-bor -it maticnetwork/bor:CS-1001 bash`
+```
+
+To start bor you can run `bash start.sh`
+
+And to verify you can run `tail -f logs/bor.log` and check the logs.
+
 ### Step 4: Join public testnet
 
 #### 4.1: Get Heimdall genesis config
@@ -194,14 +201,6 @@ $ curl http://localhost:26657/status
 
 The key called `catching_up` will show your sync status, if it's not catching up it means that you are fully synced!
 
-**Expected Output**
-
-Your `heimdall-node` should be syncing now! Checkout `$GOPATH/src/github.com/maticnetwork/heimdall/logs/heimdalld.log` to get to the logs 🤩
-
-If everything's well, then your logs should look something like this:
-
-![Screenshot](../images/expected_heimdall.png)
-
 #### 4.4: Initialise genesis block for Bor
 
 ```js
@@ -224,18 +223,6 @@ To sync blocks on the testnet, you need to add peers. The file `static-nodes.jso
 $ cp static-nodes.json ../bor-config/dataDir/bor/
 ```
 
-**Adding additional peers (optional)**
-
-If you have certain peers you always want to connect to, you can configure permanent static nodes by putting something like the following example into `<datadir>/bor/static-nodes.json`
-
-```js
-[
-  "enode://f4642fa65af50cfdea8fa7414a5def7bb7991478b768e296f5e4a54e8b995de102e0ceae2e826f293c481b5325f89be6d207b003382e18a8ecba66fbaf6416c0@33.4.2.1:30303",
-  "enode://ENODEID@ip:port"
-];
-```
-For more info on how to connect to peers see [this](https://geth.ethereum.org/docs/interface/peer-to-peer).
-
 #### 4.6: Start Bor
 
 ```js
@@ -243,19 +230,8 @@ For more info on how to connect to peers see [this](https://geth.ethereum.org/do
 $ bash start.sh
 
 ```
-**Expected Output**
 
 Your `bor-node` should be syncing now! Checkout `logs/bor.log` to get to the logs 🤩
-
-If everything's well, then your logs should look something like this:
-
-![Screenshot](../images/expected_bor.png)
-
-**Ta-Da**
-
-If your `Heimdall` and `Bor` logs are fine, that your node setup is complete. Congratulations on reaching so far!
-
-Once you are done checking the logs or querying the data, you may stop all services and restart again soon as we start staking in the next stage.
 
 #### 4.7: Query data
 
