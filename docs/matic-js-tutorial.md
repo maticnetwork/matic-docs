@@ -1,7 +1,5 @@
 # Beginner-friendly tutorial to Matic.js
 
-<!-- This tutorial will act as a guide for a step-by-step process to understand and use [Matic JS](https://github.com/maticnetwork/matic.js), which is the easiest way to interact with the Matic Network. This guide is directed towards developers starting to begin their Ethereum journey. If you want to dive right ahead, feel free to skim through the article or choose to directly go to https://docs.matic.network/getting-started/. -->
-
 This tutorial will act as a guide for step-by-step process to understand and use [Matic JS](https://github.com/maticnetwork/matic.js), which is the easiest way to interact with the Matic Network. 
 
 The process followed here is:
@@ -22,7 +20,7 @@ In order to make any transactions, you will also need some Ether in the test acc
 
 Throughout this tutorial, we will be using the ERC20 token `TEST` on the Ropsten network as an example. This is a TEST token. In your DApp, you can replace it with any ERC20 token. To get some Test `TEST` tokens on Matic Network, you can access the Matic Faucet by clicking on the link below
 
-#### ERC20
+#### ERC20 / ERC721
 
 <div style="text-align: center; padding-top: 15px; padding-bottom: 15px;">
 <button class="btn btn-primary btn-md" style="padding: 15px;background-color: #000;color: #fff; border-radius: 4px;cursor: pointer; box-shadow: 0px 4px 7px -4px rgba(0,0,0,0.75);">
@@ -31,12 +29,6 @@ Throughout this tutorial, we will be using the ERC20 token `TEST` on the Ropsten
   </a>
 </button>
 </div>
-
-#### ERC721
-
-To get `TEST` ERC721 tokens, you'd need to submit a request via this
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSekAoPK5dKecoYpNQ9YKMycNoegY39Oujy7mvLF23fsammRoQ/viewform?usp=sf_link" target="_blank">
-    form.</a>
 
 ## Using Matic JS
 
@@ -79,8 +71,8 @@ These Test tokens needs to be added (depending upon the type of asset you are us
 
 |  |Ropsten  |Matic  | 
 |---|---|---|
-|TEST (ERC20)  | `0x70459e550254b9d3520a56ee95b78ee4f2dbd846` | `0xc82c13004c06e4c627cf2518612a55ce7a3db699` |    
-|TEST (ERC721)  | `0x07d799252cf13c01f602779b4dce24f4e5b08bbd` | `0x9f289a264b6db56d69ad53f363d06326b984e637` |     
+|TEST (ERC20)  | `0x28C8713DDe7F063Fdc4cA01aB2A8856e0F243Fec` | `0x9a93c912F4eFf0254d178a18ACD980C1B05b57b0` |    
+|TEST (ERC721)  | `0x07d799252cf13c01f602779b4dce24f4e5b08bbd` | `0x8D5231e0B79edD9331e0CF0d4B9f3F30d05C47A5` |     
 
 In case you are new to Ethereum and Metamask, you can refer https://docs.matic.network/newbies/conf-custom-tokens-metamask/ on instructions on how to.
 
@@ -92,151 +84,122 @@ For reference purposes, I will be creating a test folder to showcase how to setu
 
 Install the `maticjs` package via npm:
 
-`$ npm install --save web3 maticjs`
+`$ npm install --save @maticnetwork/maticjs`
 
 If you wish to directly refer a set of code examples, you can do so at https://github.com/maticnetwork/matic.js/tree/master/examples
 
-**Note:You might need to install some dependencies such as web3@1.0.0-beta.34 incase you run into any errors while running matic.js. To install this you can run the command `$ npm install web3@1.0.0-beta.34`**
+Install `@maticnetwork/meta` package for easy access to matic network's contract ABIs and addresses. (https://github.com/maticnetwork/static#package-usage)
+
+`$ npm install --save @maticnetwork/meta`
 
 ### Depositing Funds from Ropsten to Matic
 
 Within the `matic-js-test` folder, create a new file and name it `deposit-ERC20.js`. (or `deposit-ERC721.js`) and add the following code
 
 ```js
-const Matic = require('maticjs').default
+const Matic = require("@maticnetwork/maticjs").default
+const Network = require("@maticnetwork/meta/network")
 const config = require('./config')
-const token = config.ROPSTEN_TEST_TOKEN // test token address
-const from = config.FROM_ADDRESS // from address
+
+const network = new Network(config.network, config.version)
+const MaticNetwork = network.Matic
+const MainNetwork = network.Main
+
+const ChildTokenAddress = config.ChildTokenAddress
+const RootTokenAddress = config.RootTokenAddress
+
+const from = config.from
 
 // Create object of Matic
 const matic = new Matic({
-  maticProvider: config.MATIC_PROVIDER,
-  parentProvider: config.PARENT_PROVIDER,
-  rootChainAddress: config.ROOTCHAIN_ADDRESS,
-  syncerUrl: config.SYNCER_URL,
-  watcherUrl: config.WATCHER_URL,
+  maticProvider: MaticNetwork.RPC,
+  parentProvider: MainNetwork.RPC,
+  rootChain: MainNetwork.Contracts.RootChain,
+  withdrawManager: MainNetwork.Contracts.WithdrawManagerProxy,
+  depositManager: MainNetwork.Contracts.DepositManagerProxy,
+  registry: MainNetwork.Contracts.Registry
 })
-
-matic.wallet = config.PRIVATE_KEY // prefix with `0x`
 ```
 
-`token` is the address of the `TEST` TEST ERC20 token contract taken as an example in this tutorial. You will replace it with the relevant ERC20 token address in your DApp.
-
-`from` is your address. This will be address from which funds will be debited. Note that this is my test account address — you will need to plug your own address in here.
-
-`matic.wallet` is your private key. **Never store your private key in code on production** — this is added in the `config.js` file for illustration purposes. Typically a user’s private key will be stored in a browser wallet such as Metamask or a mobile wallet such as the Matic wallet, Status or a hardware wallet.
-
-Once matic object has been instantiated and wallet set up in place, add the following code, depending upon the type of token you're depositing: 
-
-#### ERC20
-```js
-const amount = '1000000000000000000' // amount in wei
-
-// Approve token
-matic
-  .approveERC20TokensForDeposit(token, amount, {
-    from,
-    onTransactionHash: (hash) => {
-      // action on Transaction success
-      console.log(hash) // eslint-disable-line
-    },
-  })
-  .then(() => {
-    // Deposit tokens
-    matic.depositERC20Tokens(token, from, amount, {
-      from,
-      onTransactionHash: (hash) => {
-        // action on Transaction success
-        console.log(hash) // eslint-disable-line
-      },
-    })
-  })
-```
-`amount` is the amount that is to be deposited. Amount is mentioned in `wei` . To those new to the field, `1 TEST` token is equivalent to 10¹⁸ `wei` . In the code snippet, `0.01 TEST` = 10¹⁶ `wei`.
-
-```js
-
-const tokenId = '1' // ERC721 token Id
-matic
-  .approveERC721TokenForDeposit(token, tokenId, {
-    from,
-    onTransactionHash: (hash) => {
-      // action on Transaction success
-      console.log(hash) // eslint-disable-line      
-    },
-  })
-  .then(() => {
-    matic.depositERC721Tokens(token, from, tokenId, {
-      from,
-      onTransactionHash: (hash) => {
-        // action on Transaction success
-        console.log(hash) // eslint-disable-line
-      },
-    })
-  })
+Create a `config.json` file in the same directory with the following contents: 
 
 ```
+{
+    "network":"testnet",
+    "version": "v3",
 
-Here, instead of `amount` we mention the `tokenId` to be deposited.
+    "privateKey": "...",
+    "from": "...",
 
-
-You will also need to create another file `config.js`. This will contain all configuration related to Matic.js.
-
-```js
-module.exports = {
-  MATIC_PROVIDER: 'https://testnet2.matic.network', // This is the MATIC testnet RPC
-  PARENT_PROVIDER:
-    'https://ropsten.infura.io/v3/70645f042c3a409599c60f96f6dd9fbc', // This is the Ropsten testnet RPC
-  ROOTCHAIN_ADDRESS: '0x60e2b19b9a87a3f37827f2c8c8306be718a5f9b4', // The address for the main Plasma contract in  Ropsten testnet
-  WITHDRAWMANAGER_ADDRESS: '0x4ef2b60cdd4611fa0bc815792acc14de4c158d22', // An address for the WithdrawManager contract on Ropsten testnet
-  DEPOSITMANAGER_ADDRESS: '0x4072fab2a132bf98207cbfcd2c341adb904a67e9',  // An address for a DepositManager contract in Ropsten testnet
-  SYNCER_URL: 'https://matic-syncer2.api.matic.network/api/v1', // Backend service which syncs the Matic sidechain state to a MySQL database which we use for faster querying. This comes in handy especially for constructing withdrawal proofs while exiting assets from Plasma. 
-  WATCHER_URL: 'https://ropsten-watcher2.api.matic.network/api/v1', // Backend service which syncs the Matic Plasma contract events on Ethereum mainchain to a MySQL database which we use for faster querying. This comes in handy especially for listening to asset deposits on the Plasma contract. 
-  ROOTWETH_ADDRESS: '0x421dc9053cb4b51a7ec07b60c2bbb3ec3cfe050b',  // This is a wrapped ETH ERC20 contract address so that we can support ETH deposits to the sidechain 
-  MATICWETH_ADDRESS: '0x31074c34a757a4b9FC45169C58068F43B717b2D0', // The corresponding wrapped ETH ERC20 contract address on the Matic chain 
-  PRIVATE_KEY: '<paste your private key here>', // A sample private key prefix with `0x`
-  FROM_ADDRESS: '<paste address belonging to private key here>',// Your address 
-  ROPSTEN_TEST_TOKEN: '0x70459e550254b9d3520a56ee95b78ee4f2dbd846', // Contract for ERC20 in Ropsten
-  MATIC_TEST_TOKEN: '0xc82c13004c06E4c627cF2518612A55CE7a3Db699', // Contract for ERC20 in Matic testnet
-  ROPSTEN_ERC721_TOKEN: '0x07d799252cf13c01f602779b4dce24f4e5b08bbd', // Contract for ERC721 in Ropsten testnet
-  MATIC_ERC721_TOKEN: '0x9f289a264b6db56d69ad53f363d06326b984e637', // Contract for ERC721 in matic testnet
+    "RootTokenAddress": "...",
+    "ChildTokenAddress": "...",
 }
 ```
 
-For now, don’t worry about these values — just keep them as is.
+`RootTokenAddress` is the address of token on Ethereum Mainnet.
 
-You will need to add your private key here. Signing of transactions will require your private key. Again, it is **NOT ADVISABLE** to hard code your private key when on production. Later, you can build keeping in mind that the user will be handling their keys at their end with MetaMask, Matic Wallet or any other compatible user wallet.
+`ChildTokenAddress` is the address of token on Matic Network.
 
-Make sure you prefix `0x` to your private key.
+> Note: for the purpose of this example, you can use TEST token addresses given above. To use a custom token, you'd need to get it mapped by the Matic team, by posting a query here: http://bit.ly/matic-technical-group
+
+`from` is the address represented by `privateKey` which will be the account from which funds will be debited.
+
+Make sure the private key is prefixed with `0x`
+
+
+> Note: **Never store your private key in code on production** — this is added in the `config.js` file for illustration purposes. Typically a user’s private key will be stored in a browser wallet such as Metamask or a mobile wallet such as the Matic wallet, Status or a hardware wallet.
+
+Once matic object has been instantiated, add the following code, depending upon the type of token you're depositing: 
+
+#### ERC20
+```js
+const amount = 1 // amount in wei
+
+async function testDeposit(token, account) {
+  await matic.initialize ()
+  await matic.setWallet (config.privateKey)
+  
+  await matic.approveERC20TokensForDeposit(token, amount, {
+      from: account, 
+  }).then((r) => console.log('approval succesful, ', r.transactionHash))
+
+  await matic.depositERC20ForUser(token, account, amount, { 
+      from: account, 
+  }).then((r) => {
+      console.log('deposit successful; tx hash, ', r.transactionHash)
+  })
+}
+
+testDeposit () 
+```
+`amount` is the amount that is to be deposited. Amount is mentioned in `wei` . To those new to the field, `1 TEST` token is equivalent to 10¹⁸ `wei` . In the code snippet, `0.01 TEST` = 10¹⁶ `wei`.
+
+#### ERC721
+
+```js
+const tokenId = 1 // amount in wei
+
+async function testDeposit(token, account) {
+  await matic.initialize ()
+  await matic.setWallet (config.privateKey)
+  
+  await matic.safeDepositERC721Tokens(
+    token,  // Token address
+    tokenId,  // TokenId for deposit
+    options // transaction fields
+  )
+}
+
+testDeposit () 
+```
+
+Here, instead of `amount` we mention the `tokenId` to be deposited.
 
 Deposit is a 2 step process
 
 - The tokens need to be first approved to the Matic rootchain contract on Ethereum.
 
-```js
-// Approve token
-matic
-  .approveERC20TokensForDeposit(token, amount, {
-    from,
-    onTransactionHash: (hash) => {
-      // action on Transaction success
-      console.log(hash, 'Deposit Tokens from Ropsten/Ethereum to Matic — Transaction Approved.') // eslint-disable-line
-    },
-  })
-```
-
 - Once approved, the deposit function is to be invoked where the tokens get deposited to the Matic contract, and are available for use in the Matic network.
-
-```js
- // Deposit tokens
-    matic.depositERC20Tokens(token, from, amount, {
-      from,
-      onTransactionHash: (hash) => {
-        // action on Transaction success
-        console.log(hash, 'Tokens deposited from Ropsten/Ethereum to Matic.') // eslint-disable-line
-      },
-    })
-```
 
 For reference purposes, the screenshots below will provide context during the actual deposit.
 
@@ -281,71 +244,61 @@ Once you have funds on Matic, you can use those funds to send to others instantl
 Create a new file — `transfer-ERC20.js` —  in your code directory. (or `transfer-ERC721.js`)
 
 ```js
-const Matic = require('maticjs').default
+const Matic = require("@maticnetwork/maticjs").default
+const Network = require("@maticnetwork/meta/network")
 const config = require('./config')
 
-const from = config.FROM_ADDRESS // from address
-const recipient = 'Paste Your receipent address here ...' // receipent address
+const network = new Network(config.network, config.version)
+const MaticNetwork = network.Matic
+const MainNetwork = network.Main
+
+const ChildTokenAddress = config.ChildTokenAddress
+const RootTokenAddress = config.RootTokenAddress
+
+const from = config.from
 
 // Create object of Matic
 const matic = new Matic({
-  maticProvider: config.MATIC_PROVIDER,
-  parentProvider: config.PARENT_PROVIDER,
-  rootChainAddress: config.ROOTCHAIN_ADDRESS,
-  syncerUrl: config.SYNCER_URL,
-  watcherUrl: config.WATCHER_URL,
+  maticProvider: MaticNetwork.RPC,
+  parentProvider: MainNetwork.RPC,
+  rootChain: MainNetwork.Contracts.RootChain,
+  withdrawManager: MainNetwork.Contracts.WithdrawManagerProxy,
+  depositManager: MainNetwork.Contracts.DepositManagerProxy,
+  registry: MainNetwork.Contracts.Registry
 })
-
-matic.wallet = config.PRIVATE_KEY // prefix with `0x`
 ```
-
 `recipient` is the receiver’s address, to whom the funds are supposed to be sent.
 
 ```js
 const recipient = "0xf66f409086647591e0c2f122C1945554b8e0e74F" // to address
 ```
-
 Once the above setup is in place, now depending upon the asset you are transferring, add the following code:
 
 #### ERC20
 ```js
-const token = config.MATIC_TEST_TOKEN // test token address
-const amount = '1000000000000000000' // amount in wei
-
-// Send Tokens
-matic.transferTokens(token, recipient, amount, {
-  from,
-  // parent: true, // For token transfer on Main network (false for Matic Network)
-  onTransactionHash: (hash) => {
-    // action on Transaction success
-    console.log(hash) // eslint-disable-line
-  },
-})
+async function testTransfer() {
+  await matic.transferERC20Tokens(ChildTokenAddress, recipient, amount, {
+      from,
+  }).then((res)=>{
+      console.log("transfer successful; tx hash,", res.transactionHash)
+  })
+}
 ```
 
 #### ERC721
 ```js
-
-const token = config.MATIC_ERC721_TOKEN // test token address
-const tokenId = '1' // ERC721 token Id
-// Send Tokens
-matic.transferERC721Tokens(token, receipent, tokenId, {
-  from,
-  // parent: true, // For token transfer on Main network (false for Matic Network)
-  onTransactionHash: (hash) => {
-    // action on Transaction success
-    console.log(hash) // eslint-disable-line
-  },
-})
-
-
+async function testTransfer() {
+  await matic.transferERC721Tokens(ChildTokenAddress, recipient, tokenId, {
+      from,
+  }).then((res)=>{
+      console.log("transfer successful; tx hash,", res.transactionHash)
+  })
+}
 ```
-
-The config details are then mentioned appropriately. You need not make any changes to it.
 
 **Sidenote** — you can change the `parent` parameter to TRUE if you are using Matic.js to transfer funds on the main Ethereum network.
 
-We have added console logging on both events, which when run successfully will display `“Transfer done!”` to assure that the transaction was completed successfully. These messages are completely customized for this tutorial, by default only the Transaction Hash will be displayed.
+We have added console logging on both events, which when run successfully will display `“transfer successful; tx hash,"` to assure that the transaction was completed successfully. These messages are completely customized for this tutorial, by default only the Transaction Hash will be displayed.
 
 We will be making 2 different transfers worth `1 TEST` and `0.100 TEST` tokens respectively.
 
@@ -429,20 +382,28 @@ Create 3 new files and name them `initiate-withdraw-ERC20.js`, `confirm-withdraw
 ### Initiate Withdraw
 
 ```js
-const Matic = require('maticjs').default
+const Matic = require("@maticnetwork/maticjs").default
+const Network = require("@maticnetwork/meta/network")
 const config = require('./config')
-const from = config.FROM_ADDRESS // from address
+
+const network = new Network(config.network, config.version)
+const MaticNetwork = network.Matic
+const MainNetwork = network.Main
+
+const ChildTokenAddress = config.ChildTokenAddress
+const RootTokenAddress = config.RootTokenAddress
+
+const from = config.from
+
 // Create object of Matic
 const matic = new Matic({
-  maticProvider: config.MATIC_PROVIDER,
-  parentProvider: config.PARENT_PROVIDER,
-  rootChainAddress: config.ROOTCHAIN_ADDRESS,
-  syncerUrl: config.SYNCER_URL,
-  watcherUrl: config.WATCHER_URL,
-  withdrawManagerAddress: config.WITHDRAWMANAGER_ADDRESS,	
+  maticProvider: MaticNetwork.RPC,
+  parentProvider: MainNetwork.RPC,
+  rootChain: MainNetwork.Contracts.RootChain,
+  withdrawManager: MainNetwork.Contracts.WithdrawManagerProxy,
+  depositManager: MainNetwork.Contracts.DepositManagerProxy,
+  registry: MainNetwork.Contracts.Registry
 })
-
-matic.wallet = config.PRIVATE_KEY // prefix with `0x`
 ```
 
 The above setup code remains the same for ERC20/ERC721
@@ -451,101 +412,53 @@ Now, depending upon your asset, add the following code:
 
 #### ERC20
 ```js
-const token = config.MATIC_TEST_TOKEN // test token address
-const amount = '1000000000000000000' // amount in wei
-// NOTE: Initiate the withdraw on the Matic chain, and wait for ~5 minutes for 
-// the checkpoint (refer https://whitepaper.matic.network/#checklayer for technical details) 
-// before confirming the withdraw by executing `confirm-withdraw.js`.
-// The txHash from the output needs to be copied to the `confirm-withdraw.js` file before executing
-matic
- .startWithdraw(token, amount, {
-   from,
-   onTransactionHash: (hash) => {
-    //  console.log("Withdraw Initiated")
-    console.log(hash) // eslint-disable-line
-   },
-})
+async function startWithdraw() {
+  await matic.startWithdraw(ChildTokenAddress, amount, {
+      from
+  }).then((r) => {
+      hash = r.transactionHash
+      console.log('initiated withdraw, ', hash)
+  })
+  return hash
+}
 ```
 
 #### ERC721
 
 ```js
-const token = config.MATIC_ERC721_TOKEN // test token address
-const tokenId = '1' // ERC721 token Id
-matic
-  .startERC721Withdraw(token, tokenId, {
-    from,
-    onTransactionHash: (hash) => {
-      // action on Transaction success
-      console.log(hash) // eslint-disable-line
-    },
+async function startWithdraw() {
+  await matic.startWithdrawForNFT(ChildTokenAddress, amount, {
+      from
+  }).then((r) => {
+      hash = r.transactionHash
+      console.log('initiated withdraw, ', hash)
   })
-
-// NOTE: Wait for next checkpoint, which will take approximately 5-10 mins. 
-// Then you can call complete-withdraw.js to submit proof.
+  return hash
+}
 ```
+
+> NOTE: Wait for next checkpoint, which will take approximately 5-10 mins. Then you can call complete-withdraw.js to submit proof.
 
 ### Confirm Withdraw
 
 The code for confirm withdraw remains common for ERC20 AND ERC721 tokens
 
 ```js
-const Matic = require('maticjs').default
-const config = require('./config')
-
-const from = config.FROM_ADDRESS // from address
-
-// Create object of Matic
-const matic = new Matic({
- maticProvider: config.MATIC_PROVIDER,
- parentProvider: config.PARENT_PROVIDER,
- rootChainAddress: config.ROOTCHAIN_ADDRESS,
- syncerUrl: config.SYNCER_URL,
- watcherUrl: config.WATCHER_URL,
- withdrawManagerAddress: config.WITHDRAWMANAGER_ADDRESS,
-})
-
-matic.wallet = config.PRIVATE_KEY // prefix with `0x`
-
-var transactionHash = 'Paste txHash here ...' // Insert txHash generated from initiate-withdraw.js 
-
-//Wait for 5 mins till the checkpoint is submitted, then run the confirm withdraw
-matic.withdraw(transactionHash, {
-   from,
-   onTransactionHash: (hash) => {
-      // action on Transaction success
-      console.log(hash) // eslint-disable-line
-      // Withdraw process is completed, funds will be transfer to your account after challege period is over.
-   },
-})
+ await matic.withdraw (txId, { 
+   from 
+   }).then((r) => 
+   console.log(r.transactionHash)
+  ) 
 ```
+enter the transaction hash obtained in the previous step as the `txId` param in this step.
 
 ### Process Exit
 
-The code for confirm withdraw remains common for ERC20 AND ERC721 tokens except for the value of `rootTokenAddress`
+The code for process exits remains common for ERC20 AND ERC721 tokens except for the value of `RootTokenAddress`
 
 ```js
-
-const Matic = require('maticjs').default
-const config = require('./config')
-
-const from = config.FROM_ADDRESS // from address
-const rootTokenAddress = config.ROPSTEN_TEST_TOKEN // Root token address
-
-// Create object of Matic
-const matic = new Matic({
- maticProvider: config.MATIC_PROVIDER,
- parentProvider: config.PARENT_PROVIDER,
- rootChainAddress: config.ROOTCHAIN_ADDRESS,
- syncerUrl: config.SYNCER_URL,
- watcherUrl: config.WATCHER_URL,
- withdrawManagerAddress: config.WITHDRAWMANAGER_ADDRESS,
-})
-
-matic.wallet = config.PRIVATE_KEY // prefix with `0x`
-
 // NOTE: Wait for NFT Challenge period to be complete
-matic.processExits(rootTokenAddress, {
+matic.processExits(RootTokenAddress, {
    from,
    onTransactionHash: (hash) => {
       // action on Transaction success
@@ -556,6 +469,8 @@ matic.processExits(rootTokenAddress, {
 ```
 
 _Note: A checkpoint, which is a representation of all transactions happening on the Matic Network to the Ethereum chain every ~5 minutes, is submitted to the mainchain Ethereum contract._
+
+You can check the status of checkpoints for different networks (Matic testnets) here: https://status.matic.today/#/checkpoints
 
 ### Withdrawing funds from Matic to Ethereum
 
@@ -595,4 +510,5 @@ Hope you have understood now that interacting with the Matic Network is quite ea
 
 Similarly, as an exercise you can Deposit, transfer and withdraw ERC721 and Ether using Matic.js following the same steps as above.
 
-Feel free to reach out to us at https://stack.matic.network/ in case you face any issues.
+Feel free to reach out to us at https://forum.matic.network/ in case you face any issues.
+
