@@ -16,7 +16,7 @@ Throughout this tutorial, we will be using the ERC20 token `TEST` on the Ethereu
 
 <div style="text-align: center; padding-top: 15px; padding-bottom: 15px;">
 <button class="btn btn-primary btn-md" style="padding: 15px;background-color: #000;color: #fff; border-radius: 4px;cursor: pointer; box-shadow: 0px 4px 7px -4px rgba(0,0,0,0.75);">
-  <a href="https://faucet.matic.today" target="_blank" style="color:inherit;">
+  <a href="https://faucet.matic.network" target="_blank" style="color:inherit;">
     Get Test Tokens
   </a>
 </button>

@@ -12,7 +12,7 @@ Block time on the Matic testnet is ~1s.
 
 ### Bring Ropsten assets (ERC20/ERC721) to the Matic testnet using Plasma
 
-* To get TEST tokens on Ropsten you can access the Matic Faucet: https://wallet.matic.today/faucet
+* To get TEST tokens on Ropsten you can access the Matic Faucet: https://faucet.matic.network
 
 * Ropsten TEST token contract address - `0x6b0b0e265321e788af11b6f1235012ae7b5a6808`
 

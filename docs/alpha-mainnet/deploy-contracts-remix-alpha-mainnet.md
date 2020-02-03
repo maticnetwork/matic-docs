@@ -97,7 +97,7 @@ We will deploy the contract by clicking on the Deploy button, i.e. specifically 
 
 We will add the number of proposals as 1 and click on Deploy. You will receive a popup from Metamask to confirm the transaction.
 
-However, you may receive an alert telling you that you have, “insufficient funds” because you don’t have ETH in your account on Matic alpha-mainnet. You could use [Matic's faucet](https://alpha-mainnet.wallet.matic.network/child-faucet) to get some Matic ETH in your account.
+However, you may receive an alert telling you that you have, “insufficient funds” because you don’t have ETH in your account on Matic alpha-mainnet. You could use [Matic's faucet](https://faucet.matic.network) to get some Matic ETH in your account.
 
 *Note that the ETH gained from the faucet can only be used for gas fees.*
 

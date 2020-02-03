@@ -43,7 +43,7 @@ The flow for asset transfers on the Matic Network is as follows:
 - Add TEST token to your Ropsten account on Metamask
     - Refer the tutorial given [here](https://docs.matic.network/newbies/conf-custom-tokens-metamask/) to add a custom token
     - TEST token contract address on Ropsten: `0x70459e550254b9d3520a56ee95b78ee4f2dbd846`
-- Get TEST tokens from the faucet https://wallet.matic.today/faucet
+- Get TEST tokens from the faucet https://faucet.matic.network
 - Add Matic RPC endpoint on Metamask
     - Refer the tutorial [here](https://docs.matic.network/newbies/conf-testnet-metamask/) to add a custom RPC endpoint
     - Matic RPC endpoint: `https://testnet2.matic.network/`
