@@ -26,7 +26,7 @@ module.exports = {
     },
     {
       type: "category",
-      label: "Architecture",
+      label: "Architectur",
       items: [
         "home/architecture/components",
         "home/architecture/matic-flow",
