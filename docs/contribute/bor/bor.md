@@ -13,15 +13,7 @@ Matic is a hybrid Plasma + Proof-of-Stake (PoS) platform. We use a dual-consensu
 
 ## Architecture
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<img src={useBaseUrl("img/Bor/BOR.svg")} />
-=======
 <img src={useBaseUrl("img/Bor/bor-architecture.png")} />
->>>>>>> master
-=======
-<img src={useBaseUrl("img/Bor/bor-architecture.png")} />
->>>>>>> master
 
 A blockchain is a set of network clients interacting and working together. The client is a piece of software capable of establishing a p2p communication channel with other clients, signing and broadcasting transactions, deploying and interacting with smart contracts, etc. The client is often referred to as a node.
 
