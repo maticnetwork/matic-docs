@@ -114,6 +114,7 @@ module.exports = {
       ],
     },
     "develop/fiat-on-ramp",
+    "develop/matic-as-gastoken",
     {
       type: "category",
       label: "Realtime Updates",
@@ -264,20 +265,20 @@ module.exports = {
               type: "category",
               label: "With Sentry",
               items: [
-            "validate/counter-stake-stage-2/linux-validator-sentry-setup",
-            "validate/counter-stake-stage-2/binaries-validator-sentry-setup",
+                "validate/counter-stake-stage-2/linux-validator-sentry-setup",
+                "validate/counter-stake-stage-2/binaries-validator-sentry-setup",
               ]
             },
             {
               type: "category",
               label: "Without Sentry",
-              items: [ 
-            "validate/counter-stake-stage-2/linux-package-installation",
-            "validate/counter-stake-stage-2/running-with-binaries",
+              items: [
+                "validate/counter-stake-stage-2/linux-package-installation",
+                "validate/counter-stake-stage-2/running-with-binaries",
               ]
             },
           ]
-        }, 
+        },
         //"validate/counter-stake-stage-2/running-with-docker",
         "validate/counter-stake-stage-2/stake-on-matic",
         "validate/counter-stake-stage-2/rewards",
