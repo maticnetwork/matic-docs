@@ -1,7 +1,7 @@
 ---
 id: delegator
-title: Delegator
-sidebar_label: Delegator
+title: Delegate on Matic
+sidebar_label: Delegate on Matic
 description: Build your next blockchain app on Matic.
 keywords:
   - docs
@@ -11,25 +11,21 @@ image: https://matic.network/banners/matic-network-16x9.png
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
-This is a step-by-step guide to help you become a delegator on Matic's incentivised testnet program. There are no pre-requisites required to become a delegator on Matic. All you have to do is have an Ethereum account.
+This is a step-by-step guide to help you become a delegator on Matic Mainnet. There are no pre-requisites required to become a delegator on Matic. All you have to do is have an Ethereum account.
 
 ## What is a Delegator?
 
-Delegators are token holders who cannot, or do not want to run a validator themselves. They can delegate staking tokens to a validator and obtain a part of their revenue in exchange. Because they share revenue with their validators, delegators also share risks. Should a validator misbehave, each of their delegators will be partially slashed in proportion to their delegated stake. Delegators play a critical role in the system, as they are responsible for choosing validators.
+Delegators are token holders who cannot, or do not want to run a validator node themselves. They can delegate staking tokens to a validator and obtain a part of their revenue in exchange. Because they share revenue with their validators, delegators also share risks. Should a validator misbehave, each of their delegators will be partially slashed in proportion to their delegated stake. Delegators play a critical role in the system, as they are responsible for choosing validators.
 
 ## Accessing the Dashboard and Login
 
-You will need to first choose the Goerli Testnet on your Metamask. Once you have choose that, you can then login to the Matic's Validator Dashboard. You can access the Dashboard here: https://cs-wallet.matic.today/staking
-
-<img src={useBaseUrl("img/staking/goerli-network.png")} />
+You will need to first choose the Ethereum Mainnet on your Metamask. Once you have chosen that, you can then login to the Matic's Staking Dashboard. You can access the Dashboard here: https://wallet.matic.network/staking
 
 Matic Validator Dashboard currently supports only Metamask as of now. So you will need to have the Metamask's extension added to your browser.
 
+If you currently using a different wallet, you can import your account to Metamask and then use the Staking Dashboard. You can read our guide on how to Import an Account to Metamask here: {add link}
+
 **Note**: We have experienced some issues with Firefox when using the Validator Dashboard. We recommend use Google Chrome of Brave.
-
-**Note:** You need to make sure you have the Staking Token added to your Metamask. For CS-2008, the staking token contract address is: `0xAFfb23A344B7ebdf4Ea6B5ec27ECC00D12fecd77`
-
-If you want to know how to add "Custom Tokens" to Metamask, you can read our guide here: https://docs.matic.today/docs/develop/metamask/custom-tokens
 
 Once you have logged in you will be navigated to a screen where you will see a list of Validators and a lot of stats.
 
@@ -84,9 +80,28 @@ As a Delegator, you earn rewards as long as the Validator is earning rewards. Cl
 
 ### Restake Rewards
 
-Restaking your rewards is an easy way to increase your delegation stake to your validator. Clicking on `Restake Reward` will ask you for confirmation from your Wallet. However, this will be 2 confirmations, as it will first `Claim your Reward` and then `Restake` it.
+Restaking your rewards is an easy way to increase your delegation stake to your validator. Clicking on `Restake Reward` will ask you for confirmation from your Wallet (Metamask). Once you confirm the transaction, only then the `restake` transaction would be complete.
 
-Once the `Restake` is complete, after 12 Block confirmations you would see an update on your Dashboard with the stake amount getting higher for the validator you had selected.
+Once the `Restake` is complete, after 12 Block confirmations you would see an update on your Dashboard with the stake amount getting higher for the validator you had selected. You can also refresh your page to see the update. 
 
 **Note:** You can `restake rewards` to individual validators only. You cannot restake your entire rewards to all validators at once.
 
+### Unbond from a Validator
+
+Unbonding from a validator means that you want to withdraw your complete stake from the validator that you delegated to. 
+
+**To Unbond from a Validator**
+
+Navigate to you Delegator Profile page (My Delegator Details Page). Once you login you will find this on the left hand menu of the Staking Dashboard.
+
+Here you will see an `Unbond` button for each of the validator. Click on the Unbond button for whichever validator that you want to Unbond from.
+
+You will receive an pop-up notification informing you about the Unbond process. It will display the Rewards that have been accumulated (If any) and also your total stake amount. You will also be givne information on when you would receive these tokens back to your account.
+
+When you unbond from a validator, there is an `unbonding period` that we maintain to ensure there is no malicious behaviour on the network. The Unbonding period is for 21 days on Matic Mainnet. You will receive your rewards immediately after you unbond, however, your stake token amount will be unlocked in 21 Days.
+
+Clicking on Unbond button will ask you to confirm the transaction. Depending on the network congestion on Ethereum the transaction will take time to complete.
+
+Once the transaction is completed you will see a Claim Stake button now. (You may need to refresh the page once the transaction is completed). 
+
+The Claim Stake button will stay disabled until the Unbonding period is complete. As of now, there is no way to notify any user about the Unbonding period (whenever it completes). Once the unbonding period is complete the Claim Stake button will be enabled and you can then claim your staked tokens and it will be transferred to your account.
