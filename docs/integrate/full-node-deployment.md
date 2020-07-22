@@ -43,9 +43,7 @@ Setup full node for Testnetv4/Mumbai testnet
 
     `ansible-playbook -l sentry playbooks/network.yml --extra-var="bor_branch=v0.2.0 heimdall_branch=v0.2.0 network_version=testnet-v4 node_type=sentry/sentry" --list-hosts`
 
-    It should output the remote machine IP(s) you have configured
-
-    <img src={useBaseUrl("img/network/full-node-mumbai.png")} />
+    It should output the remote machine IP(s) you have configured.
 
 - Setup the full node with this command:
 
@@ -112,9 +110,7 @@ Setup full node for Matic mainnet
 
     `ansible-playbook -l sentry playbooks/network.yml --extra-var="bor_branch=v0.2.0 heimdall_branch=v0.2.0 network_version=mainnet-v1 node_type=sentry/sentry" --list-hosts`
 
-    It should output the remote machine IP(s) you have configured
-
-    <img src={useBaseUrl("img/network/full-node-mainnet.png")} />
+    It should output the remote machine IP(s) you have configured.
 
 - Setup the full node with this command:
 
