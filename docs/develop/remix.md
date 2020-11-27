@@ -118,6 +118,15 @@ Go to Solidity Compiler
 - In URL field you can add the URL as "https://rpc-mumbai.matic.today"
 - Enter the Chain ID: 80001
 - (Optional Fields) Symbol: "maticmum" and Block Explorer URL: "https://mumbai-explorer.matic.today/"
+<div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
+        <img src={useBaseUrl("img/helloworld/metamask_mumbai_setup.png")} alt="RemixIDE_Step1"/>
+</div>
 - Go ahead and click save
 - Copy your address from Metamask
 <div
