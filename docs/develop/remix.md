@@ -101,7 +101,7 @@ Go to Solidity Compiler
 - Now, ```Compile HelloWorld.sol```
 - After Successful Compilation, it will show 
 <img src={useBaseUrl("img/helloworld/Screenshot_2020-02-14_at_1.08.22_PM.png")} />
-- Now, We have to deploy our smart contract on Matic Network. For that, we have to connect to web3 world, this can be done my many services like Metamask, Brave, Portis etc. We will be using Metamask. Please follow this [tutorial to setup a Metamask Account](/docs/develop/metamask/hello).
+- Now, We have to deploy our smart contract on Matic Network. For that, we have to connect to web3 world, this can be done by using any of the services like Metamask, Brave, Portis etc. We will be using Metamask. Please follow this [tutorial to setup a Metamask Account](/docs/develop/metamask/hello).
 - Open Metamask and select Custom RPC from the networks dropdown
 
 <div
@@ -115,7 +115,9 @@ Go to Solidity Compiler
 </div>
 
 - Put in a Network name - “Matic Mumbai Testnet”
-- In URL field you can add the URL as - https://rpc-mumbai.matic.today
+- In URL field you can add the URL as "https://rpc-mumbai.matic.today"
+- Enter the Chain ID: 80001
+- (Optional Fields) Symbol: "maticmum" and Block Explorer URL: "https://mumbai-explorer.matic.today/"
 - Go ahead and click save
 - Copy your address from Metamask
 <div
