@@ -64,7 +64,7 @@ Once you have signed the transaction your stake would have successfully moved fr
 
 
 
-If you have any questions or any issues please post on the Staking UI Channel on Telegram: https://t.me/maticwalletweb
+If you have any questions or any issues please post your support queries here: https://wallet-support.matic.network/
 
 
 
