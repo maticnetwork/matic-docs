@@ -37,7 +37,7 @@ module.exports = {
     {
       type: "category",
       label: "Deploying on Matic",
-      items: ["develop/remix", "develop/truffle"],
+      items: ["develop/remix", "develop/truffle","develop/hardhat"],
     },
     {
       type: "category",
