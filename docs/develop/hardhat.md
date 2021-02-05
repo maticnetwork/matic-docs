@@ -42,7 +42,7 @@ module.exports = {
     hardhat: {
     },
     matic: {
-      url: "https://rpc-mumbai.matic.today",
+      url: "https://rpc-mumbai.maticvigil.com/",
       accounts: [privateKey]
     }
   },
