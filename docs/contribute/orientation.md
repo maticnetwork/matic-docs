@@ -16,6 +16,12 @@ There are several ways to identify an area where you can contribute to Matic:
 - If you have a specific contribution in mind, confirm whether the contribution is appropriate first by reaching out in the the Matic Telegram group or contacting one of the [Community Maintainers](/docs/contribute/community-maintainers) directly
 - If you do not have a specific contribution in mind, you can also browse the issues labelled as `help wanted` on the [Matic GitHub repos](https://github.com/maticnetwork)
 - Issues that additionally have the `good first issue` label are considered ideal for first-timers
+- #### **Add to Matic Documentation:**
+  - If you need to add or change anything in Matic Documentation, please raise a PR to the `develop` branch. (Kindly check the sample PR)
+  - Matic team will review the PR or reach out accordingly. 
+  - Repository: https://github.com/maticnetwork/matic-docs
+  - Sample PR: https://github.com/maticnetwork/matic-docs/pull/360
+  > If you are adding a new document, it is recommended to just have a basic summary/introduction and a link to your github or documentation for more details.
 
 ## **Contribution guidelines**
 
