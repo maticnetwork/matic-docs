@@ -108,7 +108,7 @@ Here you will see an `Unbond` button for each of the validator. Click on the Unb
 
 You will receive an pop-up notification informing you about the Unbond process. It will display the Rewards that have been accumulated (If any) and also your total stake amount. You will also be given information on when you would receive these tokens back to your account.
 
-When you unbond from a validator, there is an `unbonding period` that we maintain to ensure there is no malicious behaviour on the network. The Unbonding period is for ~9 days(171 Checkpoints) on Matic Mainnet. You will receive your rewards immediately after you unbond, however, your stake token amount will be unlocked in ~9 days.
+When you unbond from a validator, there is an `unbonding period` that we maintain to ensure there is no malicious behaviour on the network. The Unbonding period is for ~9 days(80 Checkpoints) on Matic Mainnet. You will receive your rewards immediately after you unbond, however, your stake token amount will be unlocked in ~9 days.
 
 Clicking on Unbond button will ask you to confirm the transaction. Depending on the network congestion on Ethereum the transaction will take time to complete.
 
