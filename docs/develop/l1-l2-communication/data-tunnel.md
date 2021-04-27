@@ -11,7 +11,7 @@ image: https://matic.network/banners/matic-network-16x9.png
 ## Overview
 Matic validators continuously monitor a contract on Ethereum chain called **_StateSender_**. Each time a registered contract on Ethreum chain calls this contract, it emits an event. Using this event Matic validators relay the data to another contract on Matic chain. This **_StateSync_** mechanism is used to send data from Ethereum to Matic.
 
-Matic validators also periodically submit a hash of all transactions on Matic chain to Ethereum chain. This **_Checkpoint_** can be used to verify any transaction that happened on Matic. Once a transaction is verified to have happened on Matic chain, action can be taked accordingly on Ethereum.
+Matic validators also periodically submit a hash of all transactions on Matic chain to Ethereum chain. This **_Checkpoint_** can be used to verify any transaction that happened on Matic. Once a transaction is verified to have happened on Matic chain, action can be taken accordingly on Ethereum.
 
 These 2 mechanisms can be used together to enable two way data transfer between Ethereum and Matic. To abstract out all these interactions, you can directly inherit our **_BaseRootTunnel_** (on Ethereum) and **_BaseChildTunnel_** (on Matic) contracts.
 
