@@ -155,13 +155,20 @@ sudo cp *.service /etc/systemd/system/
 
 - Configure the following in `~/.heimdalld/config/config.toml`:
     - `moniker=<enter unique identifier>`
-    - `seeds="f4f605d60b8ffaaf15240564e58a81103510631c@159.203.9.164:26656,4fb1bc820088764a564d4f66bba1963d47d82329@44.232.55.71:26656"`
+
+```js
+ seeds="4cd60c1d76e44b05f7dfd8bab3f447b119e87042@54.147.31.250:26656,b18bbe1f3d8576f4b73d9b18976e71c65e839149@34.226.134.117:26656"
+```
 - Configure the following in `~/.heimdalld/config/heimdall-config.toml`:
-    - `eth_rpc_url =<insert Infura or any full node RPC URL to Ethereum>`
-- Add the following flag in `~/node/bor/start.sh` to the `bor` start params:
+
+    ```js
+    eth_rpc_url =<insert Infura or any full node RPC URL to Goerli>
+    ```
+
+- Add the following flag in `vi ~/node/bor/start.sh` to the `bor` start params:
 
 ```bash
---bootnodes "enode://0cb82b395094ee4a2915e9714894627de9ed8498fb881cec6db7c65e8b9a5bd7f2f25cc84e71e89d0947e51c76e85d0847de848c7782b13c0255247a6758178c@44.232.55.71:30303,enode://88116f4295f5a31538ae409e4d44ad40d22e44ee9342869e7d68bdec55b0f83c1530355ce8b41fbec0928a7d75a5745d528450d30aec92066ab6ba1ee351d710@159.203.9.164:30303"
+--bootnodes "enode://320553cda00dfc003f499a3ce9598029f364fbb3ed1222fdc20a94d97dcc4d8ba0cd0bfa996579dcc6d17a534741fb0a5da303a90579431259150de66b597251@54.147.31.250:30303"
 ```
 
 ## Start services

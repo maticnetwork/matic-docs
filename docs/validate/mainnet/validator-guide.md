@@ -21,7 +21,7 @@ We have created a simple Ansible playbooks to setup a full node on Matic Mainnet
 
     4 core CPU (t2 xLarge)
 
-    Minimum 60GB disk (make sure it is extendable)
+    Minimum 150GB disk (make sure it is extendable)
 
 It is essential that you have **2 different Machines / VM** for your Sentry and Validator Node. Having a single Machine to run both, your Sentry and Validator will cause issues.
 

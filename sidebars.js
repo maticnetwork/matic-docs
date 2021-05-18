@@ -179,9 +179,7 @@ module.exports = {
       type: "category",
       label: "L1<>L2 Communication",
       items: [
-        "develop/l1-l2-communication/ethereum-to-matic",
-        "develop/l1-l2-communication/matic-to-ethereum",
-        "develop/l1-l2-communication/data-tunnel",
+        "develop/l1-l2-communication/state-transfer"
       ],
     },
     {
@@ -227,7 +225,6 @@ module.exports = {
       type: "category",
       label: "Realtime Updates",
       items: [
-        "develop/dagger",
         "develop/dagger-webhooks",
         {
           type: "category",
@@ -443,6 +440,7 @@ module.exports = {
         "validate/mainnet/commission",
         "validate/mainnet/move-stake",
         "validate/mainnet/technical-faqs",
+        "validate/mainnet/validator-knowledge-base",
       ],
     },
     "validate/faqs",
@@ -531,6 +529,7 @@ module.exports = {
   faq: [
     "faq/faq",
     // "faq/delegator-faq",
+    "faq/commit-chain-multisigs",
     "faq/staking-faq",
     "faq/staking-tutorials",
     "faq/faqs",

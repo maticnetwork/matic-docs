@@ -44,7 +44,7 @@ To process of a becoming a validator after the highest bidder won the slot is he
 
 ### UnStake
 
-Unstacking allows validator to be out of active pool of validators. But to ensure Good Participation stake is locked for next 21 days.
+Unstacking allows validator to be out of active pool of validators. But to ensure Good Participation stake is locked for 80 checkpoints approx 10 days.
 
 - When validator wants to exit from system and stop validating blocks and submitting checkpoints she can `unstake.`
 - This action is immediate as of now.
