@@ -10,14 +10,12 @@ image: https://matic.network/banners/matic-network-16x9.png
 
 Matic Network is a scaling solution for public blockchains. Matic supports all existing Ethereum tooling along with faster and cheaper transactions.
 
-If you are looking to integrate with Matic Network, you have come to the right place. If you are on of either:
+If you are looking to integrate with Matic Network, you have come to the right place. If you are one of the following, this section is for you:
 
 - a blockchain wallet,
 - meta-transaction provider,
 - hosting blockchain full nodes or
 - building a developer tool for Ethereum or other blockchains,
-
-this section is for you.
 
 ## Deploy smart contracts
 
