@@ -197,7 +197,7 @@ The foundation nodes will be turned by the end of January, 2021
 
 ### Will there be any Foundation nodes in the future?
 
-No, there wonm't be any foundation nodes in the future.
+No, there won't be any foundation nodes in the future.
 
 
 ### How many transactions do I need to pay for Gas when I do a Move Stake?
