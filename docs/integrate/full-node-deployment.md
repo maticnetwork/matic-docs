@@ -48,7 +48,7 @@ We have created simple Ansible playbooks to setup a full node.
 - For a test run to confirm if the correct remote machine / VM is configured, run the following command:
 
     ```js
-    ansible-playbook -l sentry playbooks/network.yml --extra-var="bor_branch=v0.2.4 heimdall_branch=v0.2.1-mumbai network_version=testnet-v4 node_type=sentry/sentry" --list-hosts
+    ansible-playbook -l sentry playbooks/network.yml --extra-var="bor_branch=v0.2.5 heimdall_branch=v0.2.1-mumbai network_version=testnet-v4 node_type=sentry/sentry" --list-hosts
     ```
 
     It should output the remote machine IP(s) you have configured
@@ -58,7 +58,7 @@ We have created simple Ansible playbooks to setup a full node.
 - Setup the full node with this command:
 
     ```js
-    ansible-playbook -l sentry playbooks/network.yml --extra-var="bor_branch=v0.2.4 heimdall_branch=v0.2.1-mumbai network_version=testnet-v4 node_type=sentry/sentry"
+    ansible-playbook -l sentry playbooks/network.yml --extra-var="bor_branch=v0.2.5 heimdall_branch=v0.2.1-mumbai network_version=testnet-v4 node_type=sentry/sentry"
     ```
 
 - In case you run into any issues, delete and clean the whole setup using
@@ -172,7 +172,7 @@ Pre-requisite:
 - For a test run to confirm if the correct remote machine / VM is configured, run the following command:
 
     ```js
-    ansible-playbook -l sentry playbooks/network.yml --extra-var="bor_branch=v0.2.4 heimdall_branch=v0.2.1-mainnet  network_version=mainnet-v1 node_type=sentry/sentry" --list-hosts
+    ansible-playbook -l sentry playbooks/network.yml --extra-var="bor_branch=v0.2.5 heimdall_branch=v0.2.1-mainnet  network_version=mainnet-v1 node_type=sentry/sentry" --list-hosts
     ```
 
     It should output the remote machine IP(s) you have configured
@@ -182,7 +182,7 @@ Pre-requisite:
 - Setup the full node with this command:
 
     ```js
-    ansible-playbook -l sentry playbooks/network.yml --extra-var="bor_branch=v0.2.4 heimdall_branch=v0.2.1-mainnet  network_version=mainnet-v1 node_type=sentry/sentry"
+    ansible-playbook -l sentry playbooks/network.yml --extra-var="bor_branch=v0.2.5 heimdall_branch=v0.2.1-mainnet  network_version=mainnet-v1 node_type=sentry/sentry"
     ```
 
 - In case you run into any issues, delete and clean the whole setup using

@@ -88,7 +88,7 @@ git clone https://github.com/maticnetwork/bor
 cd bor
 
 # Checkout to a proper version
-# For eg: git checkout v0.2.4
+# For eg: git checkout v0.2.5
 git checkout <TAG OR BRANCH>
 make all
 ```
@@ -298,7 +298,7 @@ git clone https://github.com/maticnetwork/bor
 cd bor
 
 # Checkout to a proper version
-# For eg: git checkout v0.2.4
+# For eg: git checkout v0.2.5
 git checkout <TAG OR BRANCH>
 make all
 ```
