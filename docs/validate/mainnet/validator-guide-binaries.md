@@ -43,7 +43,7 @@ curl https://gist.githubusercontent.com/jdkanani/e18e14910652ad829fad994e4b89f0b
 bash install_go.sh
 ```
 
-> Note: Go version 1.11+ is recommended
+> Note: Go version 1.15+ is recommended
 
 ### RabbitMq
 
