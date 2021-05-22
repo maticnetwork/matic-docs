@@ -20,7 +20,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
     4 core CPU (t2 xLarge)
 
-    Minimum 60GB disk (make sure it is extendable)
+    Minimum 250GB disk or minimum 400GB disk if using a snapshot (make sure it is extendable)
 
 It is essential that you have **2 different Machines / VM** for your Sentry and Validator Node. Having a single Machine to run both, your Sentry and Validator nodes will run into issues
 
@@ -43,7 +43,7 @@ curl https://gist.githubusercontent.com/jdkanani/e18e14910652ad829fad994e4b89f0b
 bash install_go.sh
 ```
 
-> Note: Go version 1.11+ is recommended
+> Note: Go version 1.15+ is recommended
 
 ### RabbitMq
 
@@ -96,7 +96,7 @@ git clone https://github.com/maticnetwork/bor
 cd bor
 
 # Checkout to a proper version
-# For eg: git checkout v0.2.4
+# For eg: git checkout v0.2.5
 git checkout <TAG OR BRANCH>
 make all
 ```

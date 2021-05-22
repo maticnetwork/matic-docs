@@ -29,7 +29,7 @@ To verify that Truffle is installed properly, type **`truffle version`** on a 
 - Update the truffle-config with matic-network-crendentials.
 
 ```js
-const HDWalletProvider = require('truffle-hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 const fs = require('fs');
 const mnemonic = fs.readFileSync(".secret").toString().trim();
 

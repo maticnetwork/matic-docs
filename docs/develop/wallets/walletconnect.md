@@ -27,7 +27,8 @@ And add the following code in your App,
 ```js
 import WalletConnectProvider from "@maticnetwork/walletconnect-provider"
 
-import Web3 from "web3"import Matic from "maticjs"
+import Web3 from "web3"
+import Matic from "maticjs"
 ```
 
 Next, we set up Matic and Ropsten provider via Wallet Connect’s object:

@@ -33,8 +33,9 @@ The sample project will ask you to install hardhat-waffle and hardhat-ethers.You
 - create .secret file in the root to store your private key
 
 ```js
+require("@nomiclabs/hardhat-ethers");
 const fs = require('fs');
-const privatekey = fs.readFileSync(".secret").toString().trim();
+const privateKey = fs.readFileSync(".secret").toString().trim();
 module.exports = {
   defaultNetwork: "matic",
   networks: {
@@ -46,7 +47,7 @@ module.exports = {
     }
   },
   solidity: {
-    version: “0.7.0”,
+    version: "0.7.0",
     settings: {
       optimizer: {
         enabled: true,

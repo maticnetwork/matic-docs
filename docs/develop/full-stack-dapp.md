@@ -98,7 +98,7 @@ On the whole, we require three basic functions:
 
 ### Defining functions
 
-1. `renOutProperty`
+1. `rentOutProperty`
 ```js
 function rentOutproperty(string memory name, string memory description, uint256 price) public {
 Property memory property = Property(name, description, true /* isActive */, price, msg.sender /* owner */, new bool[](365));

@@ -156,6 +156,7 @@ module.exports = {
             "develop/ethereum-matic/pos/deposit-withdraw-event-pos",
             "develop/ethereum-matic/pos/deployment",
             "develop/ethereum-matic/pos/mapping-assets",
+            "develop/ethereum-matic/pos/mintable-assets",
           ],
         },
         {
@@ -178,9 +179,7 @@ module.exports = {
       type: "category",
       label: "L1<>L2 Communication",
       items: [
-        "develop/l1-l2-communication/ethereum-to-matic",
-        "develop/l1-l2-communication/matic-to-ethereum",
-        "develop/l1-l2-communication/data-tunnel",
+        "develop/l1-l2-communication/state-transfer"
       ],
     },
     {
@@ -226,7 +225,6 @@ module.exports = {
       type: "category",
       label: "Realtime Updates",
       items: [
-        "develop/dagger",
         "develop/dagger-webhooks",
         {
           type: "category",
@@ -328,7 +326,16 @@ module.exports = {
             },
           ],
         },
-        "contribute/state-sync",
+        {
+          type: "category",
+          label: "State Sync",
+          items: [
+            "contribute/state-sync/state-sync",
+            "contribute/state-sync/how-state-sync-works",
+
+            
+          ],
+        },
         "home/architecture/security-models",
       ],
     },
@@ -379,7 +386,8 @@ module.exports = {
     {
       type: "category",
       label: "Advanced",
-      items: ["integrate/full-node-deployment"],
+      items: ["integrate/full-node-deployment",
+      "integrate/full-node-binaries"],
     },
   ],
   Validate: [
@@ -441,6 +449,7 @@ module.exports = {
         "validate/mainnet/commission",
         "validate/mainnet/move-stake",
         "validate/mainnet/technical-faqs",
+        "validate/mainnet/validator-knowledge-base",
       ],
     },
     "validate/faqs",
@@ -521,7 +530,17 @@ module.exports = {
             },
           ],
         },
-        "contribute/state-sync",
+        {
+          type: "category",
+          label: "State Sync",
+          items: [
+            "contribute/state-sync/state-sync",
+            "contribute/state-sync/how-state-sync-works",
+
+            
+          ],
+        },
+        
         "home/architecture/security-models",
       ],
     },
@@ -529,6 +548,7 @@ module.exports = {
   faq: [
     "faq/faq",
     // "faq/delegator-faq",
+    "faq/commit-chain-multisigs",
     "faq/staking-faq",
     "faq/staking-tutorials",
     "faq/faqs",

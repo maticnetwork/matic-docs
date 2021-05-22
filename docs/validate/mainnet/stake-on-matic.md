@@ -15,7 +15,7 @@ This is a step-by-step guide to help you become a validator on Matic's incentivi
 
 ## Pre-requisites:
 
-You should have Heimdall and Bor setups up and running on your machine. If you haven't setup your node you should setup using the following instructions:  https://docs.matic.network/docs/validate/validator-guide
+You should have Heimdall and Bor setups up and running on your machine. If you haven't setup your node you should setup using the following instructions:  https://docs.matic.network/docs/validate/mainnet/validator-guide
 
 
 ### Account information
@@ -89,8 +89,6 @@ Once the transaction is completed you will have staked successfully to become a 
 
 To check the balance of your address:
 
-You can find details regarding chain-id over here: https://github.com/maticnetwork/public-testnets/blob/master/CS-2008/heimdall/config/genesis.json#L3
-
 ```bash
     heimdallcli query auth account <signer-address> --chain-id <chain-id>
 ```
@@ -115,14 +113,14 @@ In order to claim rewards you can go to your Validator Profile.
 
 You will see 2 buttons on your profile:
 
-* Claim Rewards
+* Withdraw Rewards
 * Restake Rewards
 
 <img src={useBaseUrl("img/staking/validator-rewards.png")} />
 
-#### Claim Rewards
+#### Withdraw Rewards
 
-As a Validator, you earn rewards as long as your performing your validator correctly. Clicking on Claim Rewards will ask you for a confirmation from your Wallet. Confirming the transaction will get your rewards back to your wallet and your account should be updated.
+As a Validator, you earn rewards as long as your performing your validator correctly. Clicking on Withdraw Rewards will ask you for a confirmation from your Wallet. Confirming the transaction will get your rewards back to your wallet and your account should be updated.
 
 #### Restake Rewards
 

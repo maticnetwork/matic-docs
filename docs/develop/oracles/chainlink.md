@@ -100,15 +100,15 @@ contract APIConsumer is ChainlinkClient {
     
     /**
      * Network: Matic Mumbai Testnet
-     * Oracle: 0xb33D8A4e62236eA91F3a8fD7ab15A95B9B7eEc7D
-     * Job ID: 5592aa6da3d64580933fce0401d373f0
+     * Oracle: 0x58bbdbfb6fca3129b91f0dbe372098123b38b5e9
+     * Job ID: da20aae0e4c843f6949e5cb3f7cfe8c4
      * LINK address: 0x326C977E6efc84E512bB9C30f76E30c160eD06FB
      * Fee: 0.01 LINK
      */
     constructor() public {
         setChainlinkToken(0x326C977E6efc84E512bB9C30f76E30c160eD06FB);
-        oracle = 0xb33D8A4e62236eA91F3a8fD7ab15A95B9B7eEc7D;
-        jobId = "5592aa6da3d64580933fce0401d373f0";
+        oracle = 0x58bbdbfb6fca3129b91f0dbe372098123b38b5e9;
+        jobId = "da20aae0e4c843f6949e5cb3f7cfe8c4";
         fee = 10 ** 16; // 0.01 LINK
     }
     
@@ -165,17 +165,14 @@ contract APIConsumer is ChainlinkClient {
 To get mainnet Polygon LINK token from the Ethereum mainnet, you must follow a 2 step process.
 
 1. Bridge your LINK using the Plasma or [PoS bridge](https://wallet.matic.network/bridge/).
-2. Swap the LINK for the ERC677 version via the [Pegswap, deployed by the Chainlink community](https://pegswap.surge.sh/). 
+2. Swap the LINK for the ERC677 version via the [Pegswap, deployed by the Chainlink](https://pegswap.chain.link/). 
 
 The Matic bridge brings over an ERC20 version of LINK, and LINK is an ERC677, so we just have to update it with this swap. 
 # Addresses
 
 There are currently only a few operational Chainlink oracles on the Matic Mumbai Testnet. You can always run one yourself too, and list it on the Chainlink Marketplace.
 
-### View the reference on Market.Link
-[Alpha Chain Mumbai Chainlink Node](https://market.link/nodes/384a3ac9-3260-46ad-b253-f231fac77687?network=80001&start=1613667421&end=1614272221)
-
-* Oracle: <a href="https://mumbai-explorer.matic.today/address/0xBf87377162512f8098f78f055DFD2aDAc34cbB47/transactions" target="_blank">`0xb33D8A4e62236eA91F3a8fD7ab15A95B9B7eEc7D`</a>
+* Oracle: <a href="https://mumbai-explorer.matic.today/address/0x58bbdbfb6fca3129b91f0dbe372098123b38b5e9/transactions" target="_blank">`0xb33D8A4e62236eA91F3a8fD7ab15A95B9B7eEc7D`</a>
 * LINK: <a href="https://mumbai-explorer.matic.today/address/0x70d1F773A9f81C852087B77F6Ae6d3032B02D2AB/transactions" target="_blank">`0x326C977E6efc84E512bB9C30f76E30c160eD06FB`</a>
 
 
@@ -206,7 +203,7 @@ request.addStringArray("path", path);
 
 # What Are Job IDs For?
 
-You may have noticed that example uses a `jobId` parameter when building the request. Jobs are comprised of a sequence of instructions that an oracle is configured to run. In the [code example](#code-example) above, the contract makes a request to the oracle with the job ID: `d8fcf41ee8984d3b8b0eae7b74eca7dd`. This particular job is configured to do the following:
+You may have noticed that example uses a `jobId` parameter when building the request. Jobs are comprised of a sequence of instructions that an oracle is configured to run. In the [code example](#code-example) above, the contract makes a request to the oracle with the job ID: `da20aae0e4c843f6949e5cb3f7cfe8c4`. This particular job is configured to do the following:
 
 * Make a GET request 
 * Parse the JSON response
@@ -222,11 +219,11 @@ Here is the list of jobs that the Matic oracle is configured to run.
 
 | Name |  Return Type  | ID | Adapters |
 |-----|--------|------|-------|
-| HTTP GET | `uint256` | `5592aa6da3d64580933fce0401d373f0` |  `httpget`<br/>`jsonparse`<br/>`multiply`<br/>`ethuint256`<br/>`ethtx`  |
-| HTTP GET | `int256` | `8e930dbc3f7b4300a2a914da35ac9511 ` |  `httpget`<br/>`jsonparse`<br/>`multiply`<br/>`ethint256`<br/>`ethtx`  |
-| HTTP GET | `bool` | `6289d5af30684a4d9dd6b3f878a46202 ` |  `httpget`<br/>`jsonparse`<br/>`ethbool`<br/>`ethtx`  |
-| HTTP GET | `bytes32` | `92bc82fdc9824a71a2721cb5f00b8e35 ` | `httpget`<br/>`jsonparse`<br/>`ethbytes32`<br/>`ethtx`  |
-| HTTP POST | `bytes32` | `3af399b3ce3d4a6e80112e36049955df ` | `httppost`<br/>`jsonparse`<br/>`ethbytes32`<br/>`ethtx`  |
+| HTTP GET | `uint256` | `da20aae0e4c843f6949e5cb3f7cfe8c4` |  `httpget`<br/>`jsonparse`<br/>`multiply`<br/>`ethuint256`<br/>`ethtx`  |
+| HTTP GET | `int256` | `e0c76e45462f4e429ba32c114bfbf5ac ` |  `httpget`<br/>`jsonparse`<br/>`multiply`<br/>`ethint256`<br/>`ethtx`  |
+| HTTP GET | `bool` | `999539ec63414233bdc989d8a8ff10aa ` |  `httpget`<br/>`jsonparse`<br/>`ethbool`<br/>`ethtx`  |
+| HTTP GET | `bytes32` | `a82495a8fd5b4cb492b17dc0cc31a4fe ` | `httpget`<br/>`jsonparse`<br/>`ethbytes32`<br/>`ethtx`  |
+| HTTP POST | `bytes32` | `a82495a8fd5b4cb492b17dc0cc31a4fe ` | `httppost`<br/>`jsonparse`<br/>`ethbytes32`<br/>`ethtx`  |
 
 Read more about job specifications [here](https://docs.chain.link/docs/job-specifications).
 

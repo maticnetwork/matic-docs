@@ -12,29 +12,29 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### What is the Staking Dashboard URL?
 
-The staking dashboard URL is https://wallet.matic.network/staking.
+The staking dashboard URL is: https://wallet.matic.network/staking
 
 ### What is the Minimum stake amount?
 
-There is no minimum stake amount to delegate. However, you can always start with 1 Matic token
+There is no minimum stake amount to delegate. However, you can always start with 1 Matic token.
 
 ### How many rewards will I get if I delegate?
 
-Please use the Staking Rewards Calculator to determine your estimates. https://wallet-v1.matic.network/rewards-calculator
+Please use the Staking Rewards Calculator to determine your estimates: https://wallet.matic.network/rewards-calculator
 
 ### Why does my transaction take so long?
 
 All staking transactions of Matic happen on Ethereum for security reasons.
 
-The time taken to complete a transaction depends on the gas fees that you have allowed and also the network congestion of Ethereum mainnet at that point in time. You can always use the “Speed Up” option to increase the gas fees so that your transaction can be completed soon
+The time taken to complete a transaction depends on the gas fees that you have allowed and also the network congestion of Ethereum mainnet at that point in time. You can always use the “Speed Up” option to increase the gas fees so that your transaction can be completed soon.
 
 ### Which wallets are currently supported?
 
-Currently, only the Metamask extension on the desktop browser and Coinbase Wallet are supported. Additionally you can use WalletConnect and Walletlink from supported mobile wallets to interact with the Staking UI dashboard on desktop/laptop. We will be gradually adding support for other wallets soon.
+Currently, only the Metamask extension on the desktop browser and Coinbase Wallet are supported. Additionally, you can use WalletConnect and Walletlink from supported mobile wallets to interact with the Staking UI dashboard on desktop/laptop. We will be gradually adding support for other wallets soon.
 
 ### Are hardware wallets supported?
 
-Yes, hardware wallets are supported. You can use the "Connect Hardware Wallet" option on Metamask and connect your Hardware wallet and then continue the delegation process.
+Yes, hardware wallets are supported. You can use the "Connect Hardware Wallet" option on Metamask to connect your Hardware wallet and continue the delegation process.
 
 ### Why can’t I stake directly from Binance?
 
@@ -42,11 +42,11 @@ Staking through Binance is not yet supported. There will be an announcement if a
 
 ### I have completed my delegation, where can I check details?
 
-Once you have completed your delegation, wait for 12 block confirmations on Ethereum (~3-5 minutes), then on the Dashboard,you can click on the “My Delegator Details” option on the left-hand side. Or you could also click on “Show Delegator Profile” card
+Once you have completed your delegation, wait for 12 block confirmations on Ethereum (~3-5 minutes). After 12 block confirmations, you can click on the “My Delegator Details” option on the left-hand side of the Dashboard. Or you could also click on `Show Delegator Profile` card.
 
 ### Where can I check my rewards?
 
-On the Dashboard, you can click on the “My Delegator Details” option on the left-hand side. Or you could also click on “Show Delegator Profile” card.
+On the Dashboard, you can click on the “My Delegator Details” option on the left-hand side. Or you could also click on `Show Delegator Profile` card.
 
 Check the `New Rewards` card on the right. Once you accrue rewards, you can click on the `Details` link to check rewards in detail.
 
@@ -66,9 +66,9 @@ Please check if you have enough ETH for the gas fees.
 
 The rewards are distributed whenever a checkpoint is submitted. 
 
-Currently 20188 Matic tokens are distributed proportionately on each successful checkpoint submission to each delegator based on their stake relative to the overall staking pool of all validators and delegators. Also, the percentage for the reward distributed to each delegator will vary with each checkpoint depending on the relative stake of the delegator, validator and the overall stake. 
+Currently 107163 Matic tokens are distributed proportionately on each successful checkpoint submission to each delegator based on their stake relative to the overall staking pool of all validators and delegators. Also, the percentage for the reward distributed to each delegator will vary with each checkpoint depending on the relative stake of the delegator, validator and the overall stake. 
 
-(Note that there is a 10% proposer bonus that accrues to the validator who submits the checkpoint, but over time, the effect of the extra bonus is nullified over multiple checkpoints by different validators.)
+**Note:** there is a 10% proposer bonus that accrues to the validator who submits the checkpoint, but over time, the effect of the extra bonus is nullified over multiple checkpoints by different validators.
 
 The checkpoint submission is done by one of the validators approximately every 3 hours. This time is approximate and may vary based on validator consensus on the Matic Heimdall layer. This may also vary based on Ethereum Network. Higher congestion in the network may result in delayed checkpoints.
 
@@ -78,11 +78,11 @@ You can track checkpoints on the staking contract here: https://etherscan.io/add
 
 Actual rewards earned will depend on the actual total locked supply in the network at each checkpoint. This is expected to vary significantly as more MATIC tokens get locked in the staking contracts. 
 
-Rewards will be higher, to begin with, and will keep decreasing as the locked supply % goes up. This change in locked supply is captured at every checkpoint, and rewards are calculated based on this.
+To begin with, rewards will be higher and will keep decreasing as the locked supply % goes up. This change in locked supply is captured at every checkpoint, and rewards are calculated based on this.
 
 ### How can I claim my rewards?
 
-You can claim your rewards instantly by clicking on the “New Rewards” card and then clicking on the Withdraw rewards button. This will transfer the rewards accumulated to your delegated account on Metamask.
+You can claim your rewards instantly by clicking on the `New Rewards` card and then clicking on the Withdraw rewards . This will transfer the rewards accumulated to your delegated account on Metamask.
 
 ### What is the Unbonding period?
 
@@ -90,7 +90,7 @@ The unbonding period on Matic is approximately 9 days now. It was 19 days previo
 
 ### Will I keep receiving rewards after I unbond?
 
-No. Once you unbond you stop receiving rewards.
+No. You stop receiving rewards once you unbond.
 
 ### How many transactions does the delegation require?
 
@@ -98,7 +98,7 @@ Delegation requires 2 transactions one after the other - one Approve and another
 
 ### What does Redelegate Rewards mean?
 
-Redelegating your rewards simply means, that you want to increase your stake by restaking the rewards you have accumulated.
+Redelegating your rewards simply means that you want to increase your stake by restaking the rewards you have accumulated.
 
 ### Can I stake to any validator?
 
@@ -108,26 +108,26 @@ We are doing a phased rollout of the Matic mainnet. Later on, external validator
 
 ### Which browser is compatible with Staking Dashboard?
 
-Chrome, Firefox, and Brave
+Chrome, Firefox, and Brave.
 
 ### My Metamask is stuck at confirming after login, what do I do? Or nothing happens when I try to login?
 
 Check for the following:
 
 - If you’re using Brave, please turn off the option for “Use Crypto Wallets” in the settings panel.
-- Check if you are logged into Metamask
-- Check if you are logged into Metamask with Trezor/Ledger. You need to additionally turn on permission to call contracts on your Ledger device, if not enabled already.
+- Check if you are logged into Metamask.
+- Check if you are logged into Metamask with Trezor/Ledger. Additionally, you need to turn on permission to call contracts on your Ledger device, if it is not enabled already.
 - Check your system timestamp. If the system time is not correct, you will need to correct it.
 
 ### How do I send funds from Binance or other exchanges to Matic wallet?
 
-Technically, the Matic web wallet/Staking interface is just a web application. Currently it supports the following wallets - Metamask. WalletConnect and WalletLink
+Technically, the Matic web wallet/Staking interface is just a web application. Currently, it supports the following wallets - Metamask. WalletConnect and WalletLink.
 
 So first you must withdraw your funds from Binance or any other exchange to your Ethereum address on Metamask. If you don't know how to use Metamask, google it a bit. There are plenty of videos and blogs to get started with it.
 
-### When will be possible to become a validator and how many tokens do I need to have?
+### When will it be possible to become a validator and how many tokens do I need to have?
 
-The Matic mainnet is being rolled out gradually in phases. Currently we are in Phase 1 with only the Matic foundation nodes running. Gradually, additional external validators will be onboarded. Please refer to https://blog.matic.network/mainnet-is-going-live-announcing-the-launch-sequence/ for more details.
+The Matic mainnet is being rolled out gradually in phases. Currently, we are in Phase 1 with only the Matic foundation nodes running. Gradually, additional external validators will be onboarded. Please refer to https://blog.matic.network/mainnet-is-going-live-announcing-the-launch-sequence/ for more details.
 
 ### If I have earned rewards while delegating, and if I add additional funds to the same validator node, what happens?
 
@@ -137,19 +137,19 @@ In case you dont want that to happen, re-delegate your rewards before delegating
 
 ### I have delegated my tokens via Metamask on the Staking dashboard. Do I need to keep my system or device on?
 
-No. Once your Delegation transactions are confirmed, and you can see your tokens reflected in the Total Stake and New Reward cards/sections, then you are done. There is no need to keep your system or device on.
+No. Once your Delegation transactions are confirmed, and you can see your tokens reflected in the `Total Stake` and `New Reward` cards/sections, then you are done. There is no need to keep your system or device on.
 
-### I have unbonded, how long will it take to Unbond
+### I have unbonded. How long will it take to Unbond?
 
 The unbonding period is currently set to 424 checkpoints. This is approximately 9 days. Every checkpoint takes approximately 34 minutes. However, some checkpoints could be delayed upto ~1 hour due to congestion on Ethereum.
 
-### I have unbonded, and I now see the Claim Stake button, but it is disabled, why is that
+### I have unbonded, and I now see the Claim Stake button, but it is disabled, why is that?
 
-The Claim stake button will only be enabled when your unbonding period is complete. The unbonding period is currently set at 424 checkpoints.
+The `Claim Stake` button will only be enabled when your unbonding period is complete. The unbonding period is currently set at 424 checkpoints.
 
-### Do I know when will the Claim Stake button be enabled?
+### Do I know when the Claim Stake button will be enabled?
 
-Yes, under the Claim Stake button you would see a note on how many checkpoints are pending before the Claim Stake button would be enabled. Every checkpoint takes approximately 30 minutes. However, some checkpoints could be delayed upto ~1 hour due to congestion on Ethereum.
+Yes, under the `Claim Stake` button you would see a note on how many checkpoints are pending before the `Claim Stake` button would be enabled. Every checkpoint takes approximately 30 minutes. However, some checkpoints could be delayed upto ~1 hour due to congestion on Ethereum.
 
 ### How do I switch my delegation from Foundation Nodes to External nodes?
 
@@ -157,7 +157,7 @@ You can switch your Delegation using the **Move Stake** option on the Staking UI
 
 ### Will there be any ubonding period when I switch Delegation from Foundation nodes to external nodes?
 
-There will be no Unbonding period when you switch Delegation from foundation nodes to external nodes. It will be a direct switch without any delays. However, if you are unbonding from a Foundation Node or an External node there will be an Unbonding period for that.
+There will be no Unbonding period when you switch Delegation from foundation nodes to external nodes. It will be a direct switch without any delays. However, if you are unbonding from a Foundation Node or an External node, there will be an Unbonding period for that.
 
 ### Are they any specifics to choose an external node during switch delegation?
 
@@ -165,15 +165,15 @@ No. You can choose any node of your choice.
 
 ### What happens to my rewards that are accumalated if I switch delegation from Foundation to External node?
 
-If you haven't already claimed your rewards before switching delegation, then upon successfull switch of your delegation from Foundation to External the Rewards that were accumalated till then will be transferred back to your account. 
+If you haven't already claimed your rewards before switching delegation, then upon successfull switch of your delegation from Foundation to External node, the Rewards that were accumalated until then will be transferred back to your account. 
 
 ### Will delegation on the External Nodes work the same as Foundation Nodes?
 
-Yes, it will work the same as Foundation nodes
+Yes, it will work the same as Foundation nodes.
 
 ### Will I still get rewards after delegating to an External Node?
 
-Yes, rewards will be distributed the same as earlier with the Foundation nodes. Every successful submission of a checkpoint will yield in rewards. Rewards will be distributed and calculated at every checkpoint relative to the stake ratio, as currently implemented.
+Yes, rewards will be distributed the same as earlier with the Foundation nodes. Every successful submission of a checkpoint will yield rewards. Rewards will be distributed and calculated at every checkpoint relative to the stake ratio, as currently implemented.
 
 ### Will there be any unbonding period if I unbond from an External Node?
 
@@ -191,28 +191,28 @@ Yes, you will have the option to partially move your stake from Foundation node 
 
 No, the **Move Stake** option is only available on the Foundation Nodes. If you want to switch your delegation from an external node to another external node, you will have to unbond first and then delegate to another external node.
 
-### When will the Foundations node be turned off?
+### When will the Foundations nodes be turned off?
 
-The foundation nodes will be turned by the end of January, 2021
+The foundation nodes will be turned off by the end of January, 2021.
 
 ### Will there be any Foundation nodes in the future?
 
-No, there wonm't be any foundation nodes in the future.
+No, there won't be any foundation nodes in the future.
 
 
 ### How many transactions do I need to pay for Gas when I do a Move Stake?
 
 The Move Stake is a single transaction only. All transactions would be on the Ethereum Blockchain so you would need to spend some ETH while doing the Move Stake transaction.
 
-### Will my stake be automatically unbonded after 31st January?
+### Will my stake be automatically unbonded after January 31st?
 
-No. Your stake won't be automatically unbonded after 31st January. You will have to manually unbond. And the unbonding period will still stay the same as 424 checkpoints which is approximately 9 days.
+No. Your stake won't be automatically unbonded after January 31st. You will have to manually unbond. The unbonding period will still stay the same as 424 checkpoints which is approximately 9 days.
 
-### Will I earn rewards if I haven't moved my stake from the Foundation Nodes after 31st January
+### Will I earn rewards if I haven't moved my stake from the Foundation Nodes after January 31st?
 
-No. If you haven't moved your stake to an external validator, you will stop earning rewards after 31st January.
+No. If you haven't moved your stake to an external validator, you will stop earning rewards after January 31st.
 
 ### If the external validator is missing signing checkpoints, does that mean I lose on rewards too?
 
-Yes. Rewards are distributed every checkpoint and each validator is supposed to sign the checkpoint transaction. However, if any validator misses signing the checkpoint transaction then for that checkpoint, rewards are not issued for that validator. Which in return means that you as delegator will not earn any rewards for that particular checkpoint.
+Yes. Rewards are distributed every checkpoint and each validator is supposed to sign the checkpoint transaction. However, if any validator misses signing the checkpoint transaction for that checkpoint, rewards are not issued for that validator. Which in return means that you as delegator will not earn any rewards for that particular checkpoint.
 
