@@ -78,4 +78,11 @@ export const networkBanner = [
         imageUrl: "img/polygon-logo.svg",
         description: "A swiss army knife for Ethereum scaling, Zk Rollups, Optimistic Rollups, Shared security chains"
     },
+    {
+        title: "Polygon SDK",
+        class_name: "polygon-banner",
+        linkUrl: "https://sdk-docs.polygon.technology/docs/overview/",
+        imageUrl: "img/polygon-logo.svg",
+        description: "A modular and extensible framework for building Ethereum-compatible blockchain networks."
+    },
 ];

@@ -9,7 +9,7 @@ import { firstRow, secondRow, networkBanner } from "../data/features";
 
 function NetworkBanner({title, class_name, description, linkUrl, imageUrl}) {
   return (
-    <div className="col-md-6 p-8">
+    <div className="col-md-4 p-8">
       <Link to={useBaseUrl(linkUrl)} activeClassName="active">
         <div className={`banner d-flex ${ class_name }`}>
           <div className="icon-wrapper col-2">
