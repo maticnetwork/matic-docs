@@ -70,7 +70,6 @@ module.exports = {
         //   href: "https://status.matic.today/#/checkpoints",
         // },
         "develop/tools/matic-gas-station",
-        "develop/tools/matic-widget",
       ],
     },
     {
@@ -113,13 +112,7 @@ module.exports = {
             "develop/wallets/matic-web-wallet/deposit-eth-dai-on-matic",
           ],
         },
-        {
-          type: "category",
-          label: "Matic Wallet",
-          items: [
-            "develop/wallets/exporting-seed-phrase",
-          ],
-        },
+ 
       ],
     },
     {
@@ -167,7 +160,6 @@ module.exports = {
             "develop/ethereum-matic/plasma/erc20",
             "develop/ethereum-matic/plasma/erc721",
             "develop/ethereum-matic/plasma/deposit-withdraw-event-plasma",
-            "develop/ethereum-matic/plasma/api-reference",
             "develop/ethereum-matic/plasma/mapping-assets",
           ],
         },
@@ -214,11 +206,7 @@ module.exports = {
           label: "Covalent",
           href: "https://www.covalenthq.com/docs/api/",
         },
-        {
-          type: "link",
-          label: "Ette",
-          href: "https://github.com/itzmeanjan/ette",
-        },
+
       ],
     },
     {
@@ -229,20 +217,15 @@ module.exports = {
         {
           type: "category",
           label: "Zapier - Mulitple Apps",
-          items: ["develop/zapier/about", "develop/zapier/getting-started"],
+          items: ["develop/zapier/getting-started"],
         },
       ],
     },
-    {
-      type: "category",
-      label: "Decentralised Storage",
-      items: ["develop/decentralised-storage/moibit"],
-    },
+
     {
       type: "category",
       label: "Tutorials",
       items: [
-        "develop/full-stack-dapp-with-pos",
         "develop/pos-using-metamask",
         "develop/plasma-using-metamask",
       ],
@@ -253,7 +236,6 @@ module.exports = {
       items: [
         "develop/advanced/calling-plasma-contracts",
         "develop/advanced/swap-assets",
-        "develop/advanced/deploy-your-own-matic-testnet",
         "develop/advanced/custom-restrictions",
       ],
     },
@@ -552,7 +534,8 @@ module.exports = {
     "faq/staking-faq",
     "faq/staking-tutorials",
     "faq/faqs",
-    "faq/technical-faqs"
+    "faq/technical-faqs",
+    "faq/consensys-framework",
 
   ],
 };
