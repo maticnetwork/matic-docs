@@ -10,7 +10,7 @@ image: https://matic.network/banners/matic-network-16x9.png
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Mapping is necessary in order to transfer your assets to and fro the Ethereum and Matic Network. We offer two bridges to do the same. More details on the bridge can be understood from [here](/docs/develop/ethereum-matic/getting-started).
+Mapping is necessary in order to transfer your assets to and from the Ethereum and Matic Network. We offer two bridges to do the same. More details on the bridge can be understood from [here](/docs/develop/ethereum-matic/getting-started).
 
 The mapping request has to be submitted on [https://mapper.matic.today/](https://mapper.matic.today/). You can then click on the "Map New Token" button on the top right corner to create a new mapping request. 
 
