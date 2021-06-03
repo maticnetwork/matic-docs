@@ -13,7 +13,7 @@ The following article aims to be a guide through integration of a key management
 
 The following wallets will be discussed:
 
-- [Metamask](metamask)
+- [Metamask](/docs/develop/wallets/metamask)
 - [Arkane](arkane/intro)
 - [Fortmatic](fortmatic)
 - [Portis](portis)
