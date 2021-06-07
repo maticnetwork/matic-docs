@@ -112,7 +112,7 @@ module.exports = {
             "develop/wallets/matic-web-wallet/deposit-eth-dai-on-matic",
           ],
         },
- 
+
       ],
     },
     {
@@ -169,9 +169,10 @@ module.exports = {
     },
     {
       type: "category",
-      label: "L1<>L2 Communication",
+      label: "L1 ↔ L2 Communication",
       items: [
-        "develop/l1-l2-communication/state-transfer"
+        "develop/l1-l2-communication/state-transfer",
+        "develop/l1-l2-communication/fx-portal",
       ],
     },
     {
@@ -216,7 +217,7 @@ module.exports = {
         "develop/dagger-webhooks",
         {
           type: "category",
-          label: "Zapier - Mulitple Apps",
+          label: "Zapier - Multiple Apps",
           items: ["develop/zapier/getting-started"],
         },
       ],
@@ -315,7 +316,7 @@ module.exports = {
             "contribute/state-sync/state-sync",
             "contribute/state-sync/how-state-sync-works",
 
-            
+
           ],
         },
         "home/architecture/security-models",
@@ -519,10 +520,10 @@ module.exports = {
             "contribute/state-sync/state-sync",
             "contribute/state-sync/how-state-sync-works",
 
-            
+
           ],
         },
-        
+
         "home/architecture/security-models",
       ],
     },
