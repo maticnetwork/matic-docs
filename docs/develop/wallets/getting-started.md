@@ -13,12 +13,24 @@ The following article aims to be a guide through integration of a key management
 
 The following wallets will be discussed:
 
-- [Metamask](metamask)
+- [Metamask](/docs/develop/wallets/metamask)
 - [Arkane](arkane/intro)
 - [Fortmatic](fortmatic)
 - [Portis](portis)
 - [Torus](torus)
 - [Wallet Connect](walletconnect)
+### Wallets with mobile support:
+- [Arkane](arkane/intro)
+- [Portis](portis)
+- [Torus](torus)
+- [Wallet Connect](walletconnect)
+- [Bridge wallet](https://www.mtpelerin.com/bridge-wallet)
+- [TokenPocket](https://www.tokenpocket.pro/en/)
+- [Math wallet](https://mathwallet.org/en-us/)
+- [Alpha wallet](https://alphawallet.com/)
+- [imToken](https://token.im/)
+- [Minerva](https://minerva.digital/)
+- [Ledger](https://www.ledger.com/)
 
 ### Wallets
 
