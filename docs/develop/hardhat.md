@@ -12,7 +12,7 @@ image: https://matic.network/banners/matic-network-16x9.png
 
 There are a few technical requirements before we start. Please install the following:
 
-- [Node.js v8+ LTS and npm](https://nodejs.org/en/) (comes with Node)
+- [Node.js v10+ LTS and npm](https://nodejs.org/en/) (comes with Node)
 - [Git](https://git-scm.com/)
 
 Once we have those installed, To install hardhat, you need to create an npm project by going to an empty folder, running npm init, and following its instructions. Once your project is ready, you should run
