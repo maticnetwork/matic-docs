@@ -75,9 +75,35 @@ You cannot directly send tokens from Matic UI to Exchange/wallets. You have to f
 
 Unfortunately, we can not assist in such cases. Please don't send funds directly to exchanges that support only Ethereum, you have to first withdraw from Matic to Ethereum and then send it to your exchange address.
 
-## I made a mistake of sending funds to a address. Can you reverse it?
+## My transaction is pending for too long, what can i do?
 
-The Matic Web Wallet does not handle any user keys. They are stored in your Metamask wallet. All actions are user-generated. In case these funds weren’t transferred by you, then there is a possibility that your keys may have been compromised. We are not in a position to do anything about this since we explicitly do not handle any user keys to reverse a transaction.
+Transactions on the blockchain might be dropped due to a low gas price being set when submitting the transaction. They may also be dropped when there is a sudden surge in the gas price due to congestion on Ethereum. Another possibility is that you might have canceled the transaction from your wallet or replaced the transaction. In all these cases, the wallet web will show you a transaction in progress message and this will cause you to you wait longer.
+
+If your transaction is stuck for more than an hour, a "Try Again" button will be shown. This is good, it means you can prompt the network to retry the transaction for you. What you can do next is click on the "Try Again" button to retry the same transaction. If your deposit transaction was stuck, your deposit process will be re-initiated and if your withdrawal transaction was stuck, you will be able to continue your withdrawal from where you successfully completed the last step.
+
+In case you face problems in going ahead with the "Try Again" button and you are using the Metamask wallet, you might need to check if there are lot of queued up transactions clogging your metamask's activity section. In this case, it may be helpful to re-install the metamask wallet and then proceed with your transaction. Alternatively, you may try to initiate the transaction from a separate browser.
+
+Watching the video below can give more clarity on how to use the "Try Again" feature
+
+[https://youtu.be/0b4yjR_naEQ](https://youtu.be/0b4yjR_naEQ)
+
+## What are the list of Supported Exchanges on Polygon?
+
+Below is a list of centralised exchanges that currently support Polygon and also the tokens that these exchanges support.
+
+Bitmax- USDC, EASY, MATIC
+
+MXC - MATIC, QUICK, PlotX, Dfyn
+
+Okcoin -  ETH, USDT, LINK, MKR, USDC, DAI, USDK, COMP, YFI, SNX, YFII, and UNI.
+
+Bitforex - MATIC
+
+Okex - BAL, BAT, CEL, COMP, CRV, DAI, ETH, GHST, GUSD, LINK, MKR, PAX, SNX, SUSHI, TUSD, UNI, USDC-ERC20, USDT-ERC20, USDK, wBTC, YFI, YFII, ZRX
+
+Sending Tokens to any other exchange that is not mentioned explicitly in the above list can lead to a loss of funds. If you want to withdraw funds to any exchange that does not support Polygon, you will have to first withdraw the token to Ethereum and then send it to the exchange using your Ethereum wallet. This video demonstrates how to withdraw funds from Matic to Ethereum - [https://www.youtube.com/watch?v=DgpHY95qrbQ&list=PLslsfan1R_z0Epvnqsj29V1LBAh99dzu9&index=5](https://www.youtube.com/watch?v=DgpHY95qrbQ&list=PLslsfan1R_z0Epvnqsj29V1LBAh99dzu9&index=5)
+
+Alternatively, you can follow this guide [here](/docs/develop/wallets/matic-web-wallet/web-wallet-v2-guide/).
 
 ## I am not able to login, what do I do?
 
