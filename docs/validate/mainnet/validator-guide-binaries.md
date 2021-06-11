@@ -128,18 +128,22 @@ Node types: `sentry` and `validator`
 
 ```bash
 cp -rf launch/<network-name>/sentry/<node-type> ~/node
+cp launch/<network-name>/service.sh ~/node
 
 # To setup sentry node for matic mainnet
 # cp -rf launch/mainnet-v1/sentry/sentry ~/node
+# cp launch/mainnet-v1/service.sh ~/node
 ```
 
 **For Validator:**
 
-```jsx
+```bash
 cp -rf launch/<network-name>/sentry/<node-type> ~/node
+cp launch/<network-name>/service.sh ~/node
 
 # To setup sentry node for matic mainnet
 # cp -rf launch/mainnet-v1/sentry/validator ~/node
+# cp launch/mainnet-v1/service.sh ~/node
 ```
 
 ### Setup network directories
