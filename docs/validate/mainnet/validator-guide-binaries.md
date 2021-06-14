@@ -39,7 +39,7 @@ sudo apt-get install build-essential
 ***This is required for both your Sentry and Validator node***
 
 ```bash
-curl https://gist.githubusercontent.com/jdkanani/e18e14910652ad829fad994e4b89f0b9/raw/aecdd859f568848083b4db6cc1ee2bc1b8090ed3/go-install.sh
+curl https://gist.githubusercontent.com/ssandeep/a6c7197811c83c71e5fead841bab396c/raw/e38212982ab8cdfc11776fa1a3aaf92b69e1cb15/go-install.sh
 bash install_go.sh
 ```
 
@@ -96,7 +96,7 @@ git clone https://github.com/maticnetwork/bor
 cd bor
 
 # Checkout to a proper version
-# For eg: git checkout v0.2.5
+# For eg: git checkout v0.2.6
 git checkout <TAG OR BRANCH>
 make bor-all
 ```
