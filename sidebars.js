@@ -77,8 +77,7 @@ module.exports = {
       label: "Using Metamask",
       items: [
         "develop/metamask/hello",
-        "develop/metamask/config-matic",
-        "develop/metamask/config-polygon-on-walletlink",
+        "develop/metamask/config-polygon-on-wallets",
         "develop/metamask/custom-tokens",
         "develop/metamask/multiple-accounts",
       ],

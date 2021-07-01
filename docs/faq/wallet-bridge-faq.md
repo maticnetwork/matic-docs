@@ -33,7 +33,7 @@ MATIC tokens
 
 These blogs and videos are a perfect guide to start with depositing and withdrawing: [https://docs.matic.network/docs/develop/wallets/matic-web-wallet/web-wallet-v2-guide/#depositing-funds-from-ethereum-to-matic](https://docs.matic.network/docs/develop/wallets/matic-web-wallet/web-wallet-v2-guide/#depositing-funds-from-ethereum-to-matic)[https://www.youtube.com/playlist?list=PLslsfan1R_z0Epvnqsj29V1LBAh99dzu9](https://www.youtube.com/playlist?list=PLslsfan1R_z0Epvnqsj29V1LBAh99dzu9)
 
-## How to switch to Matic mainnet in Metamask?
+## How to switch to Polygon mainnet in Metamask?
 
 Assuming that you have already added the network and custom RPC for Matic mainnet in your Metamask wallet here is how you can switch:
 
@@ -45,13 +45,13 @@ Assuming that you have already added the network and custom RPC for Matic mainne
 
 [https://lh6.googleusercontent.com/wEW3bZ8F_MowOEJ1qyZT7vjBbb4H6pzU9Xnr9kEzJKmp8TXxqOox-ONmebCQSg4Ebvpogc0lscG9yi11yY_lHbcy_Xz0yVpA_mkimzAEUYI15NWSsM8OA9KqHxTZ2gVhVV-gDndz](https://lh6.googleusercontent.com/wEW3bZ8F_MowOEJ1qyZT7vjBbb4H6pzU9Xnr9kEzJKmp8TXxqOox-ONmebCQSg4Ebvpogc0lscG9yi11yY_lHbcy_Xz0yVpA_mkimzAEUYI15NWSsM8OA9KqHxTZ2gVhVV-gDndz)
 
-You have now switched to Matic mainnet.
+You have now switched to Polygon mainnet.
 
-You can refer to this link if you are looking for instructions on how to add the network to Metamask: [https://docs.matic.network/docs/develop/metamask/config-matic](https://docs.matic.network/docs/develop/metamask/config-matic)
+You can refer to this link if you are looking for instructions on how to add the network to Metamask: [https://docs.matic.network/docs/develop/metamask/config-polygon-on-wallets#configure-polygon-on-metamask](https://docs.matic.network/docs/develop/metamask/config-polygon-on-wallets#configure-polygon-on-metamask)
 
 ## How to choose Polygon mainnet in Walletlink?
 
-Please follow the guide provided [here](https://docs.matic.network/docs/develop/metamask/config-polygon-on-walletlink)
+Please follow the guide provided [here](https://docs.matic.network/docs/develop/metamask/config-polygon-on-wallets#configure-polygon-on-walletlink)
 
 
 ## I have deposited WETH but I don’t see it on Metamask. What do I do?
