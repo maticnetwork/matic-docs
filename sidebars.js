@@ -78,6 +78,7 @@ module.exports = {
       items: [
         "develop/metamask/hello",
         "develop/metamask/config-matic",
+        "develop/metamask/config-polygon-on-walletlink",
         "develop/metamask/custom-tokens",
         "develop/metamask/multiple-accounts",
       ],
