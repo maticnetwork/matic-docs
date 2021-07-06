@@ -20,8 +20,9 @@ const WebSocket = require("ws");
 const _ = require("lodash");
 
 // For Mumbai
-const ws = new WebSocket("wss://ws-mumbai.matic.today/");
-// For Matic mainnet: wss://ws-mainnet.matic.network/
+const ws = new WebSocket("wss://ws-mumbai.matic.today/"); // https://polygon-mumbai.g.alchemy.com/v2/your-api-key
+// For Matic mainnet: wss://ws-mainnet.matic.network/ or https://polygon-mainnet.g.alchemy.com/v2/your-api-key
+// To use a free, private RPC provider, sign-up for an API key at https://auth.alchemyapi.io/  
 
 async function checkDepositStatus(user, token, childChain) {
   return new Promise((resolve, reject) => {
@@ -81,13 +82,13 @@ let Web3 = require("web3");
 
 // For mainnet, use Ethereum RPC
 const provider = new Web3.providers.HttpProvider(
-  "https://goerli.infura.io/v3/API-KEY"
+  "https://eth-goerli.alchemyapi.io/v2/your-api-key"
 );
 const web3 = new Web3(provider);
 
-// For mainnet, use the matic mainnet RPC: <Sign up for a dedicated free RPC URL at https://rpc.maticvigil.com/ or other hosted node providers.>
+// For mainnet, use the matic mainnet RPC: <Sign up for a dedicated free RPC URL at  https://auth.alchemyapi.io/, https://rpc.maticvigil.com/, or other hosted node providers.>
 const child_provider = new Web3.providers.HttpProvider(
-  "<insert Mumbai testnet RPC URL>" //get a free RPC URL at https://rpc.maticvigil.com/ or other hosted node providers.
+  "<insert Mumbai testnet RPC URL>" //get a free RPC URL at  https://auth.alchemyapi.io/, https://rpc.maticvigil.com/, or other hosted node providers.
 );
 
 const child_web3 = new Web3(child_provider);
@@ -143,12 +144,12 @@ const Web3 = require("web3");
 
 // Ethereum provider
 const provider = new Web3.providers.WebsocketProvider(
-  "wss://goerli.infura.io/ws/v3/api-key"
+  "wss://eth-goerli.ws.alchemyapi.io/v2/your-api-key"
 );
 
 const web3 = new Web3(provider);
 
-// Sign up for a free dedicated RPC URL at https://rpc.maticvigil.com/ or other hosted node providers.
+// Sign up for a free dedicated RPC URL at https://auth.alchemyapi.io/, https://rpc.maticvigil.com/, or other hosted node providers.
 const chil_provider = new Web3.providers.HttpProvider(
   "<insert Mumbai testnet RPC URL>"
 );

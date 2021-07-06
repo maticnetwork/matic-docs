@@ -35,8 +35,8 @@ Next, we set up Matic and Ropsten provider via Wallet Connect’s object:
 
 ```javascript
 const maticProvider = new WalletConnectProvider(
-  {
-    host: `https://rpc-mumbai.matic.today`,
+  { 
+    host: `https://rpc-mumbai.matic.today`, //sign up for free, private RPC URLS at https://alchemy.com or alternative providers
     callbacks: {
       onConnect: console.log('connected'),
       onDisconnect: console.log('disconnected!')
@@ -45,7 +45,7 @@ const maticProvider = new WalletConnectProvider(
 )
 
 const ropstenProvider = new WalletConnectProvider({
-  host: `https://ropsten.infura.io/v3/70645f042c3a409599c60f96f6dd9fbc`,
+  host: `https://ropsten.infura.io/v3/70645f042c3a409599c60f96f6dd9fbc`, //sign up for free, private RPC URLS at https://alchemy.com or alternative providers
   callbacks: {
     onConnect: console.log('connected'),
     onDisconnect: console.log('disconnected')

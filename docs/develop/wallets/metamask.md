@@ -5,14 +5,14 @@ description: Build your next blockchain app on Matic.
 keywords:
   - docs
   - matic
-image: https://matic.network/banners/matic-network-16x9.png 
+image: https://matic.network/banners/matic-network-16x9.png
 ---
 
 Metamask is a browser add-on that manages a user’s Ethereum wallet by storing their private key on their browser’s data store and the seed phrase encrypted with their password. It is a non-custodial wallet, meaning, the user has full access and responsibility their private key. Once lost, the user can no longer control the savings or restore access to the wallet.
 
 **Type**: Non-custodial/HD <br/>
 **Private Key Storage**: User’s local browser storage <br/>
-**Communication to Ethereum Ledger**: Infura <br/>
+**Communication to Ethereum Ledger**: Alchemy or Infura <br/>
 **Private key encoding**: Mnemonic <br/>
 
 ### 1. Set up Web3
@@ -59,7 +59,7 @@ Create a new file, name it `web3.js` and insert the following code in it:
 
 The above file exports a function called `getWeb3()` - the purpose of which is to request metamask account’s access via detecting a global object (`ethereum` or `web3`) injected by Metamask.
 
-According to [Metamask’s API documentation](https://docs.metamask.io/guide/ethereum-provider.html#upcoming-provider-changes): 
+According to [Metamask’s API documentation](https://docs.metamask.io/guide/ethereum-provider.html#upcoming-provider-changes):
 
 > MetaMask injects a global API into websites visited by its users at window.ethereum (Also available at window.web3.currentProvider for legacy reasons). This API allows websites to request user login, load data from blockchains the user has a connection to, and suggest the user sign messages and transactions. You can use this API to detect the user of a web3 browser.
 

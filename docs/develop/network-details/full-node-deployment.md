@@ -5,7 +5,7 @@ description: Build your next blockchain app on Matic.
 keywords:
   - docs
   - matic
-image: https://matic.network/banners/matic-network-16x9.png 
+image: https://matic.network/banners/matic-network-16x9.png
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -60,7 +60,7 @@ Setup full node for Testnetv4/Mumbai testnet
     - `moniker=<enter unique identifier>`
     - `seeds="4cd60c1d76e44b05f7dfd8bab3f447b119e87042@54.147.31.250:26656"`
 - Configure the following in `~/.heimdalld/config/heimdall-config.toml`:
-    - `eth_rpc_url =<insert Infura or any full node RPC URL to Goerli>`
+    - `eth_rpc_url =<insert Alchemy (https://www.alchemy.com/), Infura, or any full node RPC URL to Ethereum>`
 - Add the following flag in `~/node/bor/start.sh` to the `bor` start params:
 
 ```bash
@@ -74,7 +74,7 @@ Setup full node for Testnetv4/Mumbai testnet
     - `sudo service heimdalld start`
     - `sudo service heimdalld-rest-server start`
 
-    Once Heimdall is synced, run 
+    Once Heimdall is synced, run
 
     - `sudo service bor start`
 
@@ -129,7 +129,7 @@ Setup full node for Matic mainnet
     - `moniker=<enter unique identifier>`
     - `seeds="f4f605d60b8ffaaf15240564e58a81103510631c@159.203.9.164:26656,4fb1bc820088764a564d4f66bba1963d47d82329@44.232.55.71:26656"`
 - Configure the following in `~/.heimdalld/config/heimdall-config.toml`:
-    - `eth_rpc_url =<insert Infura or any full node RPC URL to Ethereum>`
+    - `eth_rpc_url =<insert Alchemy (https://www.alchemy.com/), Infura, or any full node RPC URL to Ethereum>`
 - Add the following flag in `~/node/bor/start.sh` to the `bor` start params:
 
 ```bash
@@ -143,7 +143,7 @@ Setup full node for Matic mainnet
     - `sudo service heimdalld start`
     - `sudo service heimdalld-rest-server start`
 
-    Once Heimdall is synced, run 
+    Once Heimdall is synced, run
 
     - `sudo service bor start`
 

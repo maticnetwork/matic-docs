@@ -123,7 +123,7 @@ and start Heimdall services again. You can refer to Step 7 in the setup guide - 
 
 ### 5. From where do I create the API key?
 
-You can access this link: [https://infura.io/register](https://infura.io/register) . Make sure that once you have setup your account and project, you copy the API key for Ropsten and not Mainnet.
+You can access this link: [https://auth.alchemyapi.io/](https://auth.alchemyapi.io/) . Make sure that once you have setup your account and project, you copy the API key for Ropsten and not Mainnet.
 
 Mainnet is selected by default.
 

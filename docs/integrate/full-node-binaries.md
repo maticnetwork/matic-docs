@@ -5,7 +5,7 @@ description: Build your next blockchain app on Matic.
 keywords:
   - docs
   - matic
-image: https://matic.network/banners/matic-network-16x9.png 
+image: https://matic.network/banners/matic-network-16x9.png
 ---
 
 import Tabs from '@theme/Tabs';
@@ -47,7 +47,7 @@ bash install_go.sh
 
 RabbitMQ is a message-queueing software also known as a message broker or queue manager. Simply said; it is software where queues are defined, to which applications connect in order to transfer a message or messages.
 
-A helper service called `bridge` which is embedded into heimdall codebase requires `rabbit-mq` to queue transactions to multiple networks. Installing it should be pretty straightforward. 
+A helper service called `bridge` which is embedded into heimdall codebase requires `rabbit-mq` to queue transactions to multiple networks. Installing it should be pretty straightforward.
 
 **Checkout the download instructions here: [https://www.rabbitmq.com/download.html](https://www.rabbitmq.com/download.html)**
 
@@ -112,9 +112,9 @@ git clone https://github.com/maticnetwork/launch
 
 To setup network directory, network name and type of node are required.
 
-Available networks: `mainnet-v1` and `testnet-v4` 
+Available networks: `mainnet-v1` and `testnet-v4`
 
-Node types: `sentry` and `validator` 
+Node types: `sentry` and `validator`
 
 ```bash
 cp -rf launch/<network-name>/sentry/<node-type>/* ~/node
@@ -140,7 +140,7 @@ bash setup.sh
 ```
 
 ## Setup service files
-  
+
 Download service.sh file
 
 ```bash
@@ -171,7 +171,7 @@ sudo cp *.service /etc/systemd/system/
 - Configure the following in `~/.heimdalld/config/heimdall-config.toml`:
 
     ```js
-    eth_rpc_url =<insert Infura or any full node RPC URL to Goerli>
+    eth_rpc_url =<insert Alchemy (https://www.alchemy.com/), Infura, or any full node RPC URL to Goerli>
     ```
 
 - Add the following flag in `vi ~/node/bor/start.sh` to the `bor` start params:
@@ -284,7 +284,7 @@ git clone https://github.com/maticnetwork/heimdall
 cd heimdall
 
 # Checkout to a proper version
-# For eg: git checkout v0.2.1-mainnet 
+# For eg: git checkout v0.2.1-mainnet
 git checkout <TAG OR BRANCH>
 make install
 ```
@@ -331,9 +331,9 @@ git clone https://github.com/maticnetwork/launch
 
 To setup network directory, network name and type of node are required.
 
-Available networks: `mainnet-v1` 
+Available networks: `mainnet-v1`
 
-Node types: `sentry` and `validator` 
+Node types: `sentry` and `validator`
 
 ```bash
 cp -rf launch/<network-name>/sentry/<node-type>/* ~/node
@@ -359,7 +359,7 @@ bash setup.sh
 ```
 
 ## Setup service files
-  
+
 Download service.sh file
 
 ```bash
@@ -446,7 +446,7 @@ Now you need to make sure that **Heimdall is synced** completely and only then S
     - On the remote machine/VM, run `curl localhost:26657/status`
     - In the output, `catching_up` value should be `false`
 
-Now once Heimdall is synced, run 
+Now once Heimdall is synced, run
 
 ```jsx
 sudo service bor start

@@ -36,7 +36,7 @@ All the network related details can be found in [network docs](/docs/develop/net
 
     const Web3 = require('Web3')
 
-    // Sign up for a free dedicated RPC URL at https://rpc.maticvigil.com/ or other hosted node providers.
+    // Sign up for a free dedicated RPC URL at https://rpc.maticvigil.com/ or other hosted node providers like https://www.alchemy.com/
     const web3 = new Web3('https://rpc-mumbai.matic.today')
 
     // web3 object is now connected with Matic's node
@@ -107,6 +107,7 @@ All the network related details can be found in [network docs](/docs/develop/net
 
 - [CryptoZombies](https://cryptozombies.io/)
 - [Full stack dapp tutorial series](https://kauri.io/collection/5b8e401ee727370001c942e3/full-stack-dapp-tutorial-series)
+- [Alchemy Docs ] (https://docs.alchemy.com/alchemy/)
 - [Infura Docs](https://infura.io/docs)
 - [Truffle Suite Docs](https://www.trufflesuite.com/docs) (Recommended)
 - [Truffle tutorials](https://www.trufflesuite.com/tutorials) (Recommended)
