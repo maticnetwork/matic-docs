@@ -20,7 +20,7 @@ For TestnetV3: https://static.matic.network/network/testnet/v3/index.json
   "Main": {
     "NetworkName": "Ropsten testnet",                                           // Network Name
     "ChainId": 3,                                                               // ChainId
-    "RPC": "https://ropsten.infura.io/v3/70645f042c3a409599c60f96f6dd9fbc",     // This is the Ropsten testnet RPC
+    "RPC": "https://ropsten.infura.io/v3/70645f042c3a409599c60f96f6dd9fbc",     // This is the Ropsten testnet RPC; sign up for free, private RPC URLS at https://alchemy.com or alternative providers
     "SyncerAPI": "https://testnetv3-syncer.api.matic.network/api/v1",           // Backend service which syncs the Matic sidechain state to a MySQL database which we use for faster querying. This comes in handy especially for constructing withdrawal proofs while exiting assets from Plasma.
     "WatcherAPI": "https://testnetv3-watcher.api.matic.network/api/v1",         // Backend service which syncs the Matic Plasma contract events on Ethereum mainchain to a MySQL database which we use for faster querying. This comes in handy especially for listening to asset deposits on the Plasma contract.
     "DaggerEndpoint": "https://ropsten.dagger.matic.network",                   // Dagger Endpoint in Ropsten

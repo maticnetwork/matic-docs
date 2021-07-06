@@ -6,7 +6,7 @@ description: Setup your validator node on Matic Mainnet
 keywords:
   - docs
   - matic
-image: https://matic.network/banners/matic-network-16x9.png 
+image: https://matic.network/banners/matic-network-16x9.png
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -70,7 +70,7 @@ Once you run this command, it will first run a series a checks to make sure your
 
 <img src={useBaseUrl("img/mainnet/setup-process.png")} />
 
-Once the setup is complete, you will see a message of completion on the terminal. 
+Once the setup is complete, you will see a message of completion on the terminal.
 
 - In case you run into any issues, delete and clean the whole setup using
 
@@ -157,12 +157,12 @@ ansible-playbook -l sentry playbooks/clean.yml
 --bootnodes "enode://0cb82b395094ee4a2915e9714894627de9ed8498fb881cec6db7c65e8b9a5bd7f2f25cc84e71e89d0947e51c76e85d0847de848c7782b13c0255247a6758178c@44.232.55.71:30303,enode://88116f4295f5a31538ae409e4d44ad40d22e44ee9342869e7d68bdec55b0f83c1530355ce8b41fbec0928a7d75a5745d528450d30aec92066ab6ba1ee351d710@159.203.9.164:30303"
 ```
 
-You will need to add the `EnodeID` of your **Validator Node** to the sentry node config. 
+You will need to add the `EnodeID` of your **Validator Node** to the sentry node config.
 
 **To get your EnodeID, Run this command on your Validator Node to get the enodeID**
 
 ```jsx
- bootnode -nodekey ~/.bor/data/bor/nodekey -writeaddress 
+ bootnode -nodekey ~/.bor/data/bor/nodekey -writeaddress
 ```
 
 - Now you will need to update the `static-nodes.json` file on your Validator node. To open the file run`vi ~/.bor/data/bor/static-nodes.json` **on your Sentry node**. You should see an output like this:
@@ -212,7 +212,7 @@ For more information, you can read our forum post here: https://forum.matic.netw
 
 Now you need to make sure that Heimdall is synced completely and only then Start Bor. If you start Bor without Heimdall syncing completely, you will run into issues frequently.
 
-Now once Heimdall is synced, run 
+Now once Heimdall is synced, run
 
 **Start Bor**
 
@@ -244,7 +244,7 @@ You will need to make sure that you open ports 22, 26656 and 30303 to world (0.0
     Now in the config file you will have to change `Moniker`  information
 
     ```jsx
-    moniker=<enter unique identifier> 
+    moniker=<enter unique identifier>
     ```
 
     - Now in this file, check for the parameter `pex`. The value for this parameter should be `false`.
@@ -274,17 +274,17 @@ vi ~/.heimdalld/config/heimdall-config.toml
 Here you need to add the URL for your Ethereum Full Node.
 
 ```jsx
-eth_rpc_url =<insert Infura or any full node RPC URL to Ethereum>
+eth_rpc_url =<insert Alchemy (https://www.alchemy.com/), Infura, or any full node RPC URL to Ethereum>
 ```
 
 ### Configuring Bor changes on your Validator Node
 
-You will need to add the `EnodeID` of your **Sentry Node** to the validator node config. 
+You will need to add the `EnodeID` of your **Sentry Node** to the validator node config.
 
 To get your EnodeID, Run this command on your Sentry Node to get the enodeID
 
 ```jsx
-    bootnode -nodekey ~/.bor/data/bor/nodekey -writeaddress 
+    bootnode -nodekey ~/.bor/data/bor/nodekey -writeaddress
 ```
 
 Now you will need to update the `static-nodes.json` file on your Validator node. To open the file run`vi ~/.bor/data/bor/static-nodes.json` **on your Validator node**. You should see an output like this:
@@ -311,7 +311,7 @@ The private key required as the input is your Ethereum wallet's Private key. Rem
 heimdallcli generate-validatorkey <Your Ethereum wallet *private* key>
 ```
 
-This will create **`priv_validator_key.json`** in the same folder. Move this validator key file to heimdall config folder. 
+This will create **`priv_validator_key.json`** in the same folder. Move this validator key file to heimdall config folder.
 
 ```jsx
 mv ./priv_validator_key.json ~/.heimdalld/config
@@ -401,7 +401,7 @@ Now you need to make sure that Heimdall is synced completely and only then Start
             - On the remote machine/VM, run `curl localhost:26657/status`
             - In the output, `catching_up` value should be `false`
 
-Now once Heimdall is synced, run 
+Now once Heimdall is synced, run
 
 ```jsx
 sudo service bor start

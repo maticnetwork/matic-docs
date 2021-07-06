@@ -40,8 +40,8 @@ The providers can be RPC urls or web3 based providers like Metamask provider, HD
   <TabItem value="url">
 
   ```js
-  const parentProvider = 'https://mainnet.infura.io/v3/<infura-key>'
-  const maticProvider = '<Sign up for a free RPC link at https://rpc.maticvigil.com/>'
+  const parentProvider = 'https://eth-mainnet.alchemyapi.io/v2/your-api-key'
+  const maticProvider = 'https://polygon-mainnet.g.alchemy.com/v2/your-api-key' // <Sign up for a free RPC link at https://www.alchemy.com/ or other hosted node providers>
   ```
   </TabItem>
 
@@ -56,8 +56,8 @@ The providers can be RPC urls or web3 based providers like Metamask provider, HD
 
   ```js
   const HDWalletProvider = require('@truffle/hdwallet-provider')
-  const parentProvider = new HDWalletProvider(privateKey, 'https://mainnet.infura.io/v3/<infura-key>'),
-  const maticProvider = new HDWalletProvider(privateKey, '<Sign up for a dedicated free RPC URL at https://rpc.maticvigil.com/ or other hosted node providers.>'),
+  const parentProvider = new HDWalletProvider(privateKey, 'https://eth-mainnet.alchemyapi.io/v2/your-api-key'),
+  const maticProvider = new HDWalletProvider(privateKey, 'https://polygon-mainnet.g.alchemy.com/v2/your-api-key'), // <Sign up for a free RPC link at https://www.alchemy.com/ or other hosted node providers>
   ```
   </TabItem>
 </Tabs>

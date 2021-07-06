@@ -12,7 +12,7 @@ Torus is a user-friendly, secure, and non-custodial key management system for DA
 
 **Type**: Non-custodial/HD <br/>
 **Private Key Storage**: User’s local browser storage / Encrypted and stored on torus’ servers <br/>
-**Communication to Ethereum Ledger**: Infura <br/>
+**Communication to Ethereum Ledger**: Alchemy or Infura <br/>
 **Private key encoding**: Mnemonic/Social-Auth-login <br/>
 
 Depending on your applications needs Torus can be integrated via the Torus Wallet, or through interacting directly with the Torus Network via DirectAuth. For more, visit Torus documentation: https://docs.tor.us/getting-started

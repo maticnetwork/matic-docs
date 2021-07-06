@@ -6,7 +6,7 @@ description: Build your next blockchain app on Matic.
 keywords:
   - docs
   - matic
-image: https://matic.network/banners/matic-network-16x9.png 
+image: https://matic.network/banners/matic-network-16x9.png
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -51,7 +51,7 @@ bash install_go.sh
 
 RabbitMQ is a message-queueing software also known as a message broker or queue manager. Simply said; it is software where queues are defined, to which applications connect in order to transfer a message or messages.
 
-A helper service called `bridge` which is embedded into heimdall codebase requires `rabbit-mq` to queue transactions to multiple networks. Installing it should be pretty straightforward. 
+A helper service called `bridge` which is embedded into heimdall codebase requires `rabbit-mq` to queue transactions to multiple networks. Installing it should be pretty straightforward.
 
 **Checkout the download instructions here: [https://www.rabbitmq.com/download.html](https://www.rabbitmq.com/download.html)**
 
@@ -73,7 +73,7 @@ git clone https://github.com/maticnetwork/heimdall
 cd heimdall
 
 # Checkout to a proper version
-# For eg: git checkout v0.2.1-mainnet 
+# For eg: git checkout v0.2.1-mainnet
 git checkout <TAG OR BRANCH>
 make install
 ```
@@ -120,9 +120,9 @@ git clone https://github.com/maticnetwork/launch
 
 To setup network directory, network name and type of node are required.
 
-Available networks: `mainnet-v1` 
+Available networks: `mainnet-v1`
 
-Node types: `sentry` and `validator` 
+Node types: `sentry` and `validator`
 
 **For Sentry**:
 
@@ -233,7 +233,7 @@ Now you need to make sure that **Heimdall is synced** completely and only then S
     - On the remote machine/VM, run `curl localhost:26657/status`
     - In the output, `catching_up` value should be `false`
 
-Now once Heimdall is synced, run 
+Now once Heimdall is synced, run
 
 ```jsx
 sudo service bor start
@@ -255,7 +255,7 @@ You can check Bor logs here:
     Now in the config file you will have to change `Moniker` and add `seeds` information
 
     ```jsx
-    moniker=<enter unique identifier> 
+    moniker=<enter unique identifier>
     ```
 
     - Now in this file, check for the parameter `pex`. The value for this parameter should be `false`.
@@ -285,17 +285,17 @@ You can check Bor logs here:
         Here you need to add the URL for your Ethereum Full Node.
 
         ```jsx
-        eth_rpc_url =<insert Infura or any full node RPC URL to Ethereum>
+        eth_rpc_url =<insert Alchemy (https://www.alchemy.com/), Infura, or any full node RPC URL to Ethereum>
         ```
 
     ### **Configuring Bor changes on your Validator Node**
 
-    You will need to add the `EnodeID` of your **Sentry Node** to the validator node config. 
+    You will need to add the `EnodeID` of your **Sentry Node** to the validator node config.
 
     To get your EnodeID, Run this command on your Sentry Node to get the enodeID
 
     ```jsx
-     bootnode -nodekey ~/.bor/data/bor/nodekey -writeaddress 
+     bootnode -nodekey ~/.bor/data/bor/nodekey -writeaddress
     ```
 
     - Now you will need to update the `static-nodes.json` file on your Validator node. To open the file run`vi ~/.bor/data/bor/static-nodes.json` **on your Validator node**. You should see an output like this:
@@ -312,13 +312,13 @@ You can check Bor logs here:
 
     This step is only required for your **Validator Node**. The Sentry node does not require generating `validatorkey`.
 
-    The private key required as the input is your Ethereum wallet's Private key, where you have the Matic tokens. You will be able to locate it in the wallet settings, depending on the Ethereum wallet you use. You can 
+    The private key required as the input is your Ethereum wallet's Private key, where you have the Matic tokens. You will be able to locate it in the wallet settings, depending on the Ethereum wallet you use. You can
 
     ```jsx
     heimdallcli generate-validatorkey <Your Ethereum wallet *private* key>
     ```
 
-    This will create **`priv_validator_key.json`** in the same folder. Move this validator key file to heimdall config folder. 
+    This will create **`priv_validator_key.json`** in the same folder. Move this validator key file to heimdall config folder.
 
     ```jsx
     mv ./priv_validator_key.json ~/.heimdalld/config
@@ -408,7 +408,7 @@ Now you need to make sure that Heimdall is synced completely and only then Start
     - On the remote machine/VM, run `curl localhost:26657/status`
     - In the output, `catching_up` value should be `false`
 
-Now once Heimdall is synced, run 
+Now once Heimdall is synced, run
 
 ```js
 sudo service bor start
