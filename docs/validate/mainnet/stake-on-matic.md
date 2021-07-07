@@ -15,7 +15,8 @@ This is a step-by-step guide to help you become a validator on Matic's incentivi
 
 ## Pre-requisites:
 
-You should have Heimdall and Bor setups up and running on your machine. If you haven't setup your node you should setup using the following instructions:  https://docs.matic.network/docs/validate/mainnet/validator-guide
+
+You should have Heimdall and Bor setups up and running on your machine. If you haven't setup your node you should setup using the following instructions:  https://docs.matic.network/docs/validate/orientation
 
 
 ### Account information

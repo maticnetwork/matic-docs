@@ -37,7 +37,7 @@ module.exports = {
     {
       type: "category",
       label: "Deploying on Matic",
-      items: ["develop/remix", "develop/truffle","develop/hardhat"],
+      items: ["develop/remix", "develop/truffle", "develop/hardhat"],
     },
     {
       type: "category",
@@ -70,17 +70,29 @@ module.exports = {
         //   href: "https://status.matic.today/#/checkpoints",
         // },
         "develop/tools/matic-gas-station",
-        "develop/tools/matic-widget",
       ],
     },
     {
       type: "category",
-      label: "Using Metamask",
+      label: "Configure Polygon on Wallets",
       items: [
-        "develop/metamask/hello",
-        "develop/metamask/config-matic",
-        "develop/metamask/custom-tokens",
-        "develop/metamask/multiple-accounts",
+        {
+          type: "category",
+          label: "Metamask",
+          items: [
+            "develop/metamask/hello",
+            "develop/metamask/config-polygon-on-metamask",
+            "develop/metamask/custom-tokens",
+            "develop/metamask/multiple-accounts",
+          ],
+        },
+        {
+          type: "category",
+          label: "Wallet Link",
+          items: [
+            "develop/metamask/config-polygon-on-wallet-link",
+          ],
+        },
       ],
     },
 
@@ -113,13 +125,6 @@ module.exports = {
             "develop/wallets/matic-web-wallet/deposit-eth-dai-on-matic",
           ],
         },
-        {
-          type: "category",
-          label: "Matic Wallet",
-          items: [
-            "develop/wallets/exporting-seed-phrase",
-          ],
-        },
       ],
     },
     {
@@ -140,7 +145,7 @@ module.exports = {
                 "develop/ethereum-matic/pos/using-sdk/eth",
                 "develop/ethereum-matic/pos/using-sdk/erc20",
                 "develop/ethereum-matic/pos/using-sdk/erc721",
-                "develop/ethereum-matic/pos/using-sdk/erc1155"
+                "develop/ethereum-matic/pos/using-sdk/erc1155",
               ],
             },
             {
@@ -156,7 +161,6 @@ module.exports = {
             "develop/ethereum-matic/pos/deposit-withdraw-event-pos",
             "develop/ethereum-matic/pos/deployment",
             "develop/ethereum-matic/pos/mapping-assets",
-            "develop/ethereum-matic/pos/mintable-assets",
           ],
         },
         {
@@ -168,18 +172,19 @@ module.exports = {
             "develop/ethereum-matic/plasma/erc20",
             "develop/ethereum-matic/plasma/erc721",
             "develop/ethereum-matic/plasma/deposit-withdraw-event-plasma",
-            "develop/ethereum-matic/plasma/api-reference",
             "develop/ethereum-matic/plasma/mapping-assets",
           ],
         },
         "develop/ethereum-matic/submit-mapping-request",
+        "develop/ethereum-matic/mintable-assets",
       ],
     },
     {
       type: "category",
-      label: "L1<>L2 Communication",
+      label: "L1 ↔ L2 Communication",
       items: [
-        "develop/l1-l2-communication/state-transfer"
+        "develop/l1-l2-communication/state-transfer",
+        "develop/l1-l2-communication/fx-portal",
       ],
     },
     {
@@ -189,7 +194,7 @@ module.exports = {
         "develop/metatransactions/getting-started",
         "develop/metatransactions/metatransactions-biconomy",
         "develop/metatransactions/metatransactions-gsn",
-        "develop/metatransactions/network-agnostics"
+        "develop/metatransactions/network-agnostics",
       ],
     },
     {
@@ -214,11 +219,6 @@ module.exports = {
           label: "Covalent",
           href: "https://www.covalenthq.com/docs/api/",
         },
-        {
-          type: "link",
-          label: "Ette",
-          href: "https://github.com/itzmeanjan/ette",
-        },
       ],
     },
     {
@@ -228,24 +228,16 @@ module.exports = {
         "develop/dagger-webhooks",
         {
           type: "category",
-          label: "Zapier - Mulitple Apps",
-          items: ["develop/zapier/about", "develop/zapier/getting-started"],
+          label: "Zapier - Multiple Apps",
+          items: ["develop/zapier/getting-started"],
         },
       ],
     },
-    {
-      type: "category",
-      label: "Decentralised Storage",
-      items: ["develop/decentralised-storage/moibit"],
-    },
+
     {
       type: "category",
       label: "Tutorials",
-      items: [
-        "develop/full-stack-dapp-with-pos",
-        "develop/pos-using-metamask",
-        "develop/plasma-using-metamask",
-      ],
+      items: ["develop/pos-using-metamask", "develop/plasma-using-metamask"],
     },
     {
       type: "category",
@@ -253,7 +245,6 @@ module.exports = {
       items: [
         "develop/advanced/calling-plasma-contracts",
         "develop/advanced/swap-assets",
-        "develop/advanced/deploy-your-own-matic-testnet",
         "develop/advanced/custom-restrictions",
       ],
     },
@@ -332,8 +323,6 @@ module.exports = {
           items: [
             "contribute/state-sync/state-sync",
             "contribute/state-sync/how-state-sync-works",
-
-            
           ],
         },
         "home/architecture/security-models",
@@ -355,14 +344,12 @@ module.exports = {
             {
               type: "link",
               label: "Matic-Mainnet",
-              href:
-                "https://github.com/maticnetwork/static/blob/master/network/mainnet/v1/index.json",
+              href: "https://github.com/maticnetwork/static/blob/master/network/mainnet/v1/index.json",
             },
             {
               type: "link",
               label: "Mumbai",
-              href:
-                "https://static.matic.network/network/testnet/mumbai/index.json",
+              href: "https://static.matic.network/network/testnet/mumbai/index.json",
             },
           ],
         },
@@ -386,8 +373,7 @@ module.exports = {
     {
       type: "category",
       label: "Advanced",
-      items: ["integrate/full-node-deployment",
-      "integrate/full-node-binaries"],
+      items: ["integrate/full-node-deployment", "integrate/full-node-binaries"],
     },
   ],
   Validate: [
@@ -536,11 +522,9 @@ module.exports = {
           items: [
             "contribute/state-sync/state-sync",
             "contribute/state-sync/how-state-sync-works",
-
-            
           ],
         },
-        
+
         "home/architecture/security-models",
       ],
     },
@@ -551,8 +535,8 @@ module.exports = {
     "faq/commit-chain-multisigs",
     "faq/staking-faq",
     "faq/staking-tutorials",
-    "faq/faqs",
-    "faq/technical-faqs"
-
+    "faq/wallet-bridge-faq",
+    "faq/technical-faqs",
+    "faq/consensys-framework",
   ],
 };

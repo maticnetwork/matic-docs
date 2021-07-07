@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### How to stake?
 
-For Staking you would need to have funds on Ethereum Mainnet.Login to Metamask on the Ethereum network using the Staking Dashboard. https://wallet.matic.network/staking
+For Staking you would need to have funds on Ethereum Mainnet. Login to Metamask on the Ethereum network using the Staking Dashboard. https://wallet.matic.network/staking
 
 
 ### I am unable to view the Staking tab. How do i access Staking?

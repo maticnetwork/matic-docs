@@ -29,7 +29,7 @@ To verify that Truffle is installed properly, type **`truffle version`** on a 
 - Update the truffle-config with matic-network-crendentials.
 
 ```js
-const HDWalletProvider = require('truffle-hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 const fs = require('fs');
 const mnemonic = fs.readFileSync(".secret").toString().trim();
 
@@ -112,4 +112,4 @@ Summary
 
 **Congratulations!** You have successfully deployed HelloWorld Smart Contract. Now you can interact with the Smart Contract.
 
-You can check the deployment status here: https://mumbai-explorer.matic.today/
+You can check the deployment status here: https://mumbai.polygonscan.com/

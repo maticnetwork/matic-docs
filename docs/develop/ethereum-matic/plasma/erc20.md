@@ -13,7 +13,7 @@ image: https://matic.network/banners/matic-network-16x9.png
 
 #### **Deposit ERC20 (2 step process)**
 
-1. The tokens need to be first approved to the Matic rootchain contract on Parent Chain(Etheruem/Goerli).
+1. The tokens need to be first approved to the Matic rootchain contract on Parent Chain (Ethereum/Goerli).
 2. Once approved, the **deposit** function is to be invoked where the tokens get deposited to the Matic contract, and are available for use in the Matic network.
 
 #### **Transfer ERC20**

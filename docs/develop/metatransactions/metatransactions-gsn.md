@@ -57,6 +57,23 @@ GSNv2 is a broad idea, which brings several components into picture, discussed b
 
 <img src={useBaseUrl("img/gsn/gsn_flow_full_layered.jpg")} />
 
+#### Deployed Addresses
+
+|Contract   | Matic Mumbai |
+|---|---|
+| Forwarder  |  ```0xF65De530849aC11d6931b07A52C17e054489920e``` |
+| RelayHub  |  ```0x79A1c9f5a05795aFc04bbACaE46275Ac01a11919``` |
+| StakeManager  | ```0x9D0060A21C048cF7b0Fa8Da997B78c4B211F39c8``` |
+| VersionRegistry  | ```0x94492Dd0130d93AB76E106B4d8F91eB0f1613931``` |
+| Accept-Everything Paymaster | ```0x5566b6DE069c8c60caD808E133f513AE9AD2Eb5a``` |
+
+|Contract   | Matic Mainnet |
+|---|---|
+| Forwarder  |  ```0xCB8e0DE47A619d2f26450f22F40399f1B4E015e9``` |
+| RelayHub  |  ```0x4DEb80d7dbcD0Df91F301fe89993194E16735b58``` |
+| StakeManager  | ```0x2c788C28406E839B2F1fE540f0e654b417BAa92c``` |
+| VersionRegistry  | ```0x53F662C49997eB95cFd9203dB89b30065FCa249B``` |
+
 ##### Client
 
 Clients are dApp users, who will be signing a message, with all required fields & send it to a *relay server*, where gas fees to be paid for this transaction. So client doesn't initiate a transaction here, rather they'll ask relay server to do it for them.

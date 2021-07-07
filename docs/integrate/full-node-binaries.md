@@ -37,7 +37,7 @@ sudo apt-get install build-essential
 ### **Install GO**
 
 ```bash
-curl https://gist.githubusercontent.com/jdkanani/e18e14910652ad829fad994e4b89f0b9/raw/aecdd859f568848083b4db6cc1ee2bc1b8090ed3/go-install.sh
+curl https://gist.githubusercontent.com/ssandeep/a6c7197811c83c71e5fead841bab396c/raw/e38212982ab8cdfc11776fa1a3aaf92b69e1cb15/go-install.sh
 bash install_go.sh
 ```
 
@@ -88,9 +88,9 @@ git clone https://github.com/maticnetwork/bor
 cd bor
 
 # Checkout to a proper version
-# For eg: git checkout v0.2.5
+# For eg: git checkout v0.2.6
 git checkout <TAG OR BRANCH>
-make all
+make bor-all
 ```
 
 That will install the `bor` binary and `bootnode` binary:
@@ -117,10 +117,10 @@ Available networks: `mainnet-v1` and `testnet-v4`
 Node types: `sentry` and `validator` 
 
 ```bash
-cp -rf launch/<network-name>/sentry/<node-type> ~/node
+cp -rf launch/<network-name>/sentry/<node-type>/* ~/node
 
 # To setup sentry node for mumbai (testnet-v4) testnet
-# cp -rf launch/testnet-v4/sentry/sentry ~/node
+# cp -rf launch/testnet-v4/sentry/sentry/* ~/node
 ```
 
 ### Setup network directories
@@ -140,6 +140,15 @@ bash setup.sh
 ```
 
 ## Setup service files
+  
+Download service.sh file
+
+```bash
+cd ~/node
+wget https://raw.githubusercontent.com/maticnetwork/launch/master/<network-name>/service.sh
+# To setup sentry node for mumbai (testnet-v4) testnet
+# wget https://raw.githubusercontent.com/maticnetwork/launch/master/testnet-v4/service.sh
+```
 
 Generate services files and copy them into system directory
 
@@ -255,11 +264,11 @@ sudo apt-get install build-essential
 ***This is required for both your Sentry and Validator node***
 
 ```bash
-curl https://gist.githubusercontent.com/jdkanani/e18e14910652ad829fad994e4b89f0b9/raw/aecdd859f568848083b4db6cc1ee2bc1b8090ed3/go-install.sh
+curl https://gist.githubusercontent.com/ssandeep/a6c7197811c83c71e5fead841bab396c/raw/e38212982ab8cdfc11776fa1a3aaf92b69e1cb15/go-install.sh
 bash install_go.sh
 ```
 
-> Note: Go version 1.11+ is recommended
+> Note: Go version 1.15+ is recommended
 
 ## Install Binaries
 
@@ -298,9 +307,9 @@ git clone https://github.com/maticnetwork/bor
 cd bor
 
 # Checkout to a proper version
-# For eg: git checkout v0.2.5
+# For eg: git checkout v0.2.6
 git checkout <TAG OR BRANCH>
-make all
+make bor-all
 ```
 
 That will install the `bor` binary and `bootnode` binary:
@@ -327,10 +336,10 @@ Available networks: `mainnet-v1`
 Node types: `sentry` and `validator` 
 
 ```bash
-cp -rf launch/<network-name>/sentry/<node-type> ~/node
+cp -rf launch/<network-name>/sentry/<node-type>/* ~/node
 
 # To setup sentry node for matic mainnet
-# cp -rf launch/mainnet-v1/sentry/sentry ~/node
+# cp -rf launch/mainnet-v1/sentry/sentry/* ~/node
 ```
 
 ### Setup network directories
@@ -350,6 +359,20 @@ bash setup.sh
 ```
 
 ## Setup service files
+  
+Download service.sh file
+
+```bash
+cd ~/node
+wget https://raw.githubusercontent.com/maticnetwork/launch/master/<network-name>/service.sh
+# To setup sentry node for mainnet (mainnet-v1)
+# wget https://raw.githubusercontent.com/maticnetwork/launch/master/mainnet-v1/service.sh
+```
+
+Generate the metadata file
+```bash
+touch /etc/matic/metadata
+```
 
 Generate services files and copy them into system directory
 
@@ -358,6 +381,8 @@ cd ~/node
 bash service.sh
 sudo cp *.service /etc/systemd/system/
 ```
+
+
 
 ## Setup config files
 
@@ -391,7 +416,7 @@ To enable Archive mode you can add the following flags in the `[start.sh](http:/
 
 ```jsx
 --gcmode 'archive' \
---ws --wsport 8546 --wsaddr 0.0.0.0 --wsorigins '*' \
+--ws --ws.port 8546 --ws.addr 0.0.0.0 --ws.origins '*' \
 ```
 
 ## Start services

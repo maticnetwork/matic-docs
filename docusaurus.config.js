@@ -85,6 +85,11 @@ module.exports = {
           position: "left",
           activeBasePath: "docs/faq",
         },
+        {
+          label: "Polygon SDK",
+          href: "https://sdk-docs.polygon.technology/docs/overview/",
+          position: "left",
+        },
       ],
     },
   },

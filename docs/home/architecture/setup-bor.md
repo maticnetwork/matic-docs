@@ -15,7 +15,7 @@ Use the `master` or `develop` branch, which contains the latest stable release.
     $ cd $GOPATH/src/github.com/maticnetwork
     $ git clone https://github.com/maticnetwork/bor
     $ cd bor
-    $ make bor
+    $ make bor-all
 
 Now, you have bor installed on your local system and the binary is available in the path `./build/bin/bor`
 

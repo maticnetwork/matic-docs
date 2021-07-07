@@ -10,7 +10,7 @@ image: https://matic.network/banners/matic-network-16x9.png
 
 ## What are Matic mintable tokens?
 
-Assets can be transferred to and fro across the Ethereum and Matic chain using the PoS bridge. These assets include ERC20, ERC721, ERC1155 and many other token standards. Most of the assets are pre-existing on Ethereum chain. But new assets can be created on the Matic chain as well and moved back to Ethereum chain as and when required. This can save lots of gas and time that is spent on token minting on Ethereum. Creation of assets on the Matic chain is much easier and a more recommended approach. These assets can be moved to Ethereum chain when required. Such type of assets are called Matic mintable assets. 
+Assets can be transferred to and from across the Ethereum and Matic chain using the PoS bridge. These assets include ERC20, ERC721, ERC1155 and many other token standards. Most of the assets are pre-existing on Ethereum chain. But new assets can be created on the Matic chain as well and moved back to Ethereum chain as and when required. This can save lots of gas and time that is spent on token minting on Ethereum. Creation of assets on the Matic chain is much easier and a more recommended approach. These assets can be moved to Ethereum chain when required. Such type of assets are called Matic mintable assets. 
 
 In the case of Matic Mintable tokens, assets are created on Matic. When a Matic minted asset has to be moved to Ethereum, the asset has to be burned first and then a proof of this burn transaction has to be submitted on the Ethereum chain. The RootChainManager contract calls a special predicate contract internally. This predicate contract directly calls the mint function of the asset contract on Ethereum and the tokens are minted to the users address. This special predicate is called the MintableAssetPredicate.
 
@@ -24,15 +24,17 @@ You can either deploy
 - A mintable token contract on the Matic chain or
 - Submit a mapping request and the mintable token contract can be autodeployed for you on the Matic chain via the Mapper tool. You just need to submit a mapping request at [https://mapper.matic.today/](https://mapper.matic.today/) and leave the child contract field blank in the form. Also, do remember to choose the Mintable option in the form.
 
-> Note that the Ethereum contract needs to be deployed as shown in the next step - no minting needs to be done on Ethereum though. It is required so that tokens can be withdrawn to Ethereum if need be. 
+Please visit this [link](/docs/develop/ethereum-matic/submit-mapping-request) to understand how to create a new mapping request. 
 
-- If you want to deploy the contract by yourself, then the child contract should look like this. You are free to make custom changes to this contract, but ensure that the `deposit`, `withdraw` and `mint` functions are present.
+- If you want to deploy the contract by yourself, then the child contract should look like the following. You are free to make custom changes to this contract, but ensure that the `deposit`, `withdraw` and `mint` functions are present.
 
     - ChildMintableERC20 -  [https://github.com/maticnetwork/pos-portal/blob/master/flat/ChildMintableERC20.sol](https://github.com/maticnetwork/pos-portal/blob/master/flat/ChildMintableERC20.sol)
     - ChildMintableERC721 - [https://github.com/maticnetwork/pos-portal/blob/master/flat/ChildMintableERC721.sol](https://github.com/maticnetwork/pos-portal/blob/master/flat/ChildMintableERC721.sol)
     - ChildMintableERC1155 - [https://github.com/maticnetwork/pos-portal/blob/master/flat/ChildMintableERC1155.sol](https://github.com/maticnetwork/pos-portal/blob/master/flat/ChildMintableERC1155.sol)
 
 Please do mention the contract address of the deployed child token when you submit the mapping request. 
+
+> Note that the Ethereum contract needs to be deployed as shown in the next step - no minting needs to be done on Ethereum though. It is required so that tokens can be withdrawn to Ethereum if need be. 
 
 ### Contract to be deployed on Ethereum
 

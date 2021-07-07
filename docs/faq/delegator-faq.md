@@ -141,7 +141,7 @@ No. Once your Delegation transactions are confirmed, and you can see your tokens
 
 ### I have unbonded, how long will it take to Unbond
 
-The unbonding period is currently set to 424 checkpoints. This is approximately 9 days. Every checkpoint takes approximately 34 minutes. However, some checkpoints could be delayed upto ~1 hour due to congestion on Ethereum.
+The unbonding period is currently set to 82 checkpoints. This is approximately 9 days. Every checkpoint takes approximately 34 minutes. However, some checkpoints could be delayed upto ~1 hour due to congestion on Ethereum.
 
 ### I have unbonded, and I now see the Claim Stake button, but it is disabled, why is that
 
@@ -177,7 +177,7 @@ Yes, rewards will be distributed the same as earlier with the Foundation nodes. 
 
 ### Will there be any unbonding period if I unbond from an External Node?
 
-Yes, the unbonding period will stay the same as currently implemented. 424 Checkpoints.
+Yes, the unbonding period will stay the same as currently implemented. 82 Checkpoints.
 
 ### Will there be any locking period after I switch my Delegation from Foundation to External node?
 

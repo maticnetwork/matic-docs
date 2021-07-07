@@ -137,7 +137,7 @@ The resolution is simple - choose the chain with higher difficulty. But then the
 
 Now having defined the difficulty of each block, the difficulty of a fork is simply the sum of the difficulties of the blocks in that fork. In the case when a fork has to be chosen, the one with higher difficulty is chosen, since that is a reflection of the fact that blocks were produced by in-turn block producers.
 
-One caveat is that we only allow reorgs of up to 10 blocks. Forks with a block diff greater than that are discarded if even if it had a higher difficulty - this is simply to provide some sense of finality to the user on Bor. 
+Forks with a block diff greater than that are discarded if even if it had a higher difficulty - this is simply to provide some sense of finality to the user on Bor. 
 
 ## View change
 

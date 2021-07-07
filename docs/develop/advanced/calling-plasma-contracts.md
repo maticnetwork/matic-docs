@@ -40,7 +40,7 @@ To get some `TEST` tokens on Goerli network, you can access the Matic Faucet by 
 
 You can also check transaction procesed on the Matic Sidechain using the Matic Explorer.
 
-Link to the explorer - https://mumbai-explorer.matic.today
+Link to the explorer - https://mumbai.polygonscan.com/
 
 ## Workflow
 

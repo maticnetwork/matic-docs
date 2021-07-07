@@ -37,13 +37,13 @@ Use the `FxBaseChildTunnel` contract from [here](https://github.com/jdkanani/fx-
 - While deploying your root contract on **Goerli testnet**, pass the address of `_checkpointManager` as `0x2890bA17EfE978480615e330ecB65333b880928e` and `_fxRoot` as `0x3d1d3E34f7fB6D26245E6640E1c50710eFFf15bA` . For **ethereum mainnet** `_checkpointManager` is `0x86e4dc95c7fbdbf52e33d563bbdb00823894c287` and `_fxRoot` is `0xfe5e5D361b2ad62c541bAb87C45a0B9B018389a2`.
 - For deploying the child contract on **Mumbai testnet**, pass`0xCf73231F28B7331BBe3124B907840A94851f9f11` as `_fxChild` in constructor. For **Matic mainnet,** `_fxChild` will be `0x8397259c983751DAf40400790063935a11afa28a` .
 - call `setFxChildTunnel` on deployed root tunnel with the address of child tunnel (E.g: [https://goerli.etherscan.io/tx/0x79cd30ace561a226258918b56ce098a08ce0c70707a80bba91197f127a48b5c2](https://goerli.etherscan.io/tx/0x79cd30ace561a226258918b56ce098a08ce0c70707a80bba91197f127a48b5c2) )
-- call `setFxRootTunnel` on deployed child tunnel with address of root tunnel (E.g: [https://explorer-mumbai.maticvigil.com/tx/0xffd0cda35a8c3fd6d8c1c04cd79a27b7e5e00cfc2ffc4b864d2b45a8bb7e98b8/internal-transactions](https://explorer-mumbai.maticvigil.com/tx/0xffd0cda35a8c3fd6d8c1c04cd79a27b7e5e00cfc2ffc4b864d2b45a8bb7e98b8/internal-transactions) )
+- call `setFxRootTunnel` on deployed child tunnel with address of root tunnel (E.g: [https://mumbai.polygonscan.com/tx/0xffd0cda35a8c3fd6d8c1c04cd79a27b7e5e00cfc2ffc4b864d2b45a8bb7e98b8/internal-transactions](https://mumbai.polygonscan.com/tx/0xffd0cda35a8c3fd6d8c1c04cd79a27b7e5e00cfc2ffc4b864d2b45a8bb7e98b8/internal-transactions) )
 
 ## Example contracts of state transfer bridge
 
 - **Contracts**: [Fx-Portal Repository](https://github.com/jdkanani/fx-portal/tree/main/contracts/tunnel)
 - **Goerli:** [0xc4432e7dab6c1b43f4dc38ad2a594ca448aec9af](https://goerli.etherscan.io/address/0xc4432e7dab6c1b43f4dc38ad2a594ca448aec9af)
-- **Mumbai:** [0xa0060Cc969d760c3FA85844676fB654Bba693C22](https://explorer-mumbai.maticvigil.com/address/0xa0060Cc969d760c3FA85844676fB654Bba693C22/transactions)
+- **Mumbai:** [0xa0060Cc969d760c3FA85844676fB654Bba693C22](https://mumbai.polygonscan.com/address/0xa0060Cc969d760c3FA85844676fB654Bba693C22/transactions)
 
 ## State transfer from Ethereum to Matic
 
@@ -52,7 +52,7 @@ Use the `FxBaseChildTunnel` contract from [here](https://github.com/jdkanani/fx-
 
 ## State transfer from Matic to Ethereum
 
-- Call `_sendMessageToRoot()` internally in your child contract with data as a parameter to be sent to Ethereum. ( E.g: [https://explorer-mumbai.maticvigil.com/tx/0x3cc9f7e675bb4f6af87ee99947bf24c38cbffa0b933d8c981644a2f2b550e66a/logs](https://explorer-mumbai.maticvigil.com/tx/0x3cc9f7e675bb4f6af87ee99947bf24c38cbffa0b933d8c981644a2f2b550e66a/logs) )
+- Call `_sendMessageToRoot()` internally in your child contract with data as a parameter to be sent to Ethereum. ( E.g: [https://mumbai.polygonscan.com/tx/0x3cc9f7e675bb4f6af87ee99947bf24c38cbffa0b933d8c981644a2f2b550e66a/logs](https://mumbai.polygonscan.com/tx/0x3cc9f7e675bb4f6af87ee99947bf24c38cbffa0b933d8c981644a2f2b550e66a/logs) )
 - Note the transaction hash as it'll be used to generate proof after it has been included as a checkpoint. Use the following sample script to generate proof from transaction hash.
 
 ```jsx

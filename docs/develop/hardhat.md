@@ -12,7 +12,7 @@ image: https://matic.network/banners/matic-network-16x9.png
 
 There are a few technical requirements before we start. Please install the following:
 
-- [Node.js v8+ LTS and npm](https://nodejs.org/en/) (comes with Node)
+- [Node.js v10+ LTS and npm](https://nodejs.org/en/) (comes with Node)
 - [Git](https://git-scm.com/)
 
 Once we have those installed, To install hardhat, you need to create an npm project by going to an empty folder, running npm init, and following its instructions. Once your project is ready, you should run
@@ -33,8 +33,9 @@ The sample project will ask you to install hardhat-waffle and hardhat-ethers.You
 - create .secret file in the root to store your private key
 
 ```js
+require("@nomiclabs/hardhat-ethers");
 const fs = require('fs');
-const privatekey = fs.readFileSync(".secret").toString().trim();
+const privateKey = fs.readFileSync(".secret").toString().trim();
 module.exports = {
   defaultNetwork: "matic",
   networks: {
@@ -46,7 +47,7 @@ module.exports = {
     }
   },
   solidity: {
-    version: “0.7.0”,
+    version: "0.7.0",
     settings: {
       optimizer: {
         enabled: true,
@@ -84,7 +85,7 @@ Greeter deployed to: 0xfaFfCAD549BAA6110c5Cc03976d9383AcE90bdBE
 > Remember your address would differ, Above is just to provide an idea of structure.
 **Congratulations!** You have successfully deployed Greeter Smart Contract. Now you can interact with the Smart Contract.
 
-You can check the deployment status here: https://mumbai-explorer.matic.today/
+You can check the deployment status here: https://mumbai.polygonscan.com/
 
 
 

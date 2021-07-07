@@ -20,7 +20,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
     4 core CPU (t2 xLarge)
 
-    Minimum 150GB disk (make sure it is extendable)
+    Minimum 250GB disk or minimum 400GB disk if using a snapshot (make sure it is extendable)
 
 It is essential that you have **2 different Machines / VM** for your Sentry and Validator Node. Having a single Machine to run both, your Sentry and Validator nodes will run into issues
 
@@ -39,7 +39,7 @@ sudo apt-get install build-essential
 ***This is required for both your Sentry and Validator node***
 
 ```bash
-curl https://gist.githubusercontent.com/jdkanani/e18e14910652ad829fad994e4b89f0b9/raw/aecdd859f568848083b4db6cc1ee2bc1b8090ed3/go-install.sh
+curl https://gist.githubusercontent.com/ssandeep/a6c7197811c83c71e5fead841bab396c/raw/e38212982ab8cdfc11776fa1a3aaf92b69e1cb15/go-install.sh
 bash install_go.sh
 ```
 
@@ -96,9 +96,9 @@ git clone https://github.com/maticnetwork/bor
 cd bor
 
 # Checkout to a proper version
-# For eg: git checkout v0.2.5
+# For eg: git checkout v0.2.6
 git checkout <TAG OR BRANCH>
-make all
+make bor-all
 ```
 
 That will install the `bor` binary and `bootnode` binary:
@@ -128,18 +128,22 @@ Node types: `sentry` and `validator`
 
 ```bash
 cp -rf launch/<network-name>/sentry/<node-type> ~/node
+cp launch/<network-name>/service.sh ~/node
 
 # To setup sentry node for matic mainnet
 # cp -rf launch/mainnet-v1/sentry/sentry ~/node
+# cp launch/mainnet-v1/service.sh ~/node
 ```
 
 **For Validator:**
 
-```jsx
+```bash
 cp -rf launch/<network-name>/sentry/<node-type> ~/node
+cp launch/<network-name>/service.sh ~/node
 
 # To setup sentry node for matic mainnet
 # cp -rf launch/mainnet-v1/sentry/validator ~/node
+# cp launch/mainnet-v1/service.sh ~/node
 ```
 
 ### Setup network directories
