@@ -16,11 +16,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 - Minimum system requirements are as follows:
 
-    16 GiB of memory
+    16 - 32 GiB of memory
 
-    4 core CPU (t2 xLarge)
+    4 - 8 core CPU (t3 xLarge)
 
-    Minimum 250GB disk or minimum 400GB disk if using a snapshot (make sure it is extendable)
+    Minimum 650GB SSD (make sure it is extendable)
 
 It is essential that you have **2 different Machines / VM** for your Sentry and Validator Node. Having a single Machine to run both, your Sentry and Validator nodes will run into issues
 

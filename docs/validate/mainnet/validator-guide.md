@@ -13,15 +13,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 We have created a simple Ansible playbooks to setup a full node on Matic Mainnet
 
+## Pre-requisites
+
 ### Minimum System Requirements
 
 - Minimum system requirements are as follows:
 
-    16 GiB of memory
+    16 - 32 GiB of memory
 
-    4 core CPU (t2 xLarge)
+    4 - 8 core CPU (t3 xLarge)
 
-    Minimum 150GB disk (make sure it is extendable)
+    Minimum 650GB SSD (make sure it is extendable)
 
 It is essential that you have **2 different Machines / VM** for your Sentry and Validator Node. Having a single Machine to run both, your Sentry and Validator will cause issues.
 

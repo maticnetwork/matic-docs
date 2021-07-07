@@ -26,7 +26,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Minimum System Requirements
 
-https://docs.matic.network/docs/validate/technical-requirements/
+- Minimum system requirements are as follows:
+
+    16 - 32 GiB of memory
+
+    4 - 8 core CPU (t3 xLarge)
+
+    Minimum 650GB SSD (make sure it is extendable)
 
 ### Install build essentials
 
