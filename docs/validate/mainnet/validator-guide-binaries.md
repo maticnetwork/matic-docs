@@ -39,8 +39,9 @@ sudo apt-get install build-essential
 ***This is required for both your Sentry and Validator node***
 
 ```bash
-curl https://gist.githubusercontent.com/ssandeep/a6c7197811c83c71e5fead841bab396c/raw/e38212982ab8cdfc11776fa1a3aaf92b69e1cb15/go-install.sh
-bash install_go.sh
+wget https://gist.githubusercontent.com/ssandeep/a6c7197811c83c71e5fead841bab396c/raw/e38212982ab8cdfc11776fa1a3aaf92b69e1cb15/go-install.sh
+bash go-install.sh
+sudo ln -nfs ~/.go/bin/go /usr/bin/go
 ```
 
 > Note: Go version 1.15+ is recommended
@@ -99,6 +100,8 @@ cd bor
 # For eg: git checkout v0.2.6
 git checkout <TAG OR BRANCH>
 make bor-all
+sudo ln -nfs ~/bor/build/bin/bor /usr/bin/bor
+sudo ln -nfs ~/bor/build/bin/bootnode /usr/bin/bootnode
 ```
 
 That will install the `bor` binary and `bootnode` binary:
@@ -127,6 +130,8 @@ Node types: `sentry` and `validator`
 **For Sentry**:
 
 ```bash
+cd ~/
+mkdir -p node
 cp -rf launch/<network-name>/sentry/<node-type> ~/node
 cp launch/<network-name>/service.sh ~/node
 
@@ -138,6 +143,8 @@ cp launch/<network-name>/service.sh ~/node
 **For Validator:**
 
 ```bash
+cd ~/
+mkdir -p node
 cp -rf launch/<network-name>/sentry/<node-type> ~/node
 cp launch/<network-name>/service.sh ~/node
 
