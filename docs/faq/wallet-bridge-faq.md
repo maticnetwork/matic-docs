@@ -142,7 +142,7 @@ Checkpoints sometimes take more that 45 minutes to 1 hour based on network conge
 
 ## I am trying to withdraw, but the challenge period is taking more than 7 days, how long should I wait?
 
-It can take a bit more than 7 days sometimes. Kindly wait or reach out to the Polygon team if its taking too long at [](https://desk.zoho.in/portal/maticsupport/en/home)[https://wallet-support.matic.network/](https://wallet-support.matic.network/)
+It can take a bit more than 7 days sometimes. Kindly wait or reach out to the Polygon team if its taking too long at [](https://desk.zoho.in/portal/maticsupport/en/home)[https://support.polygon.technology/support/home](https://support.polygon.technology/support/home)
 
 ## Is it possible to cancel a withdraw transaction?
 
@@ -174,4 +174,4 @@ Please reach out to our support team.
 
 ## Where do I raise a support ticket?
 
-[https://wallet-support.matic.network/](https://wallet-support.matic.network/)
+[https://support.polygon.technology/support/home](https://support.polygon.technology/support/home)

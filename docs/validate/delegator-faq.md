@@ -20,7 +20,7 @@ There is no minimum stake amount to delegate. However, you can always start with
 
 ### How many rewards will I get if I delegate?
 
-Please use the Staking Rewards Calculator to determine your estimates: https://wallet.matic.network/rewards-calculator
+Please use the Staking Rewards Calculator to determine your estimates: https://wallet.matic.network/staking/rewards-calculator
 
 ### Why does my transaction take so long?
 

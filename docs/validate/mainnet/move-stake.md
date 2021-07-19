@@ -64,7 +64,7 @@ Once you have signed the transaction your stake would have successfully moved fr
 
 
 
-If you have any questions or any issues please submit a ticket here: https://wallet-support.matic.network/
+If you have any questions or any issues please submit a ticket here: https://support.polygon.technology/support/home
 
 
 

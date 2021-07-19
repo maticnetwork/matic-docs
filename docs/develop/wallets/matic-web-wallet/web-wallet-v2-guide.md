@@ -190,5 +190,5 @@ Once you have confirmed all these transactions, you will receive your funds back
 
 <img src={useBaseUrl("img/wallet/Wallet-32.png")} width="50%" height="50%"/>
 
->Note: In case you any queries, feel free to raise a ticket here https://wallet-support.matic.network/
+>Note: In case you any queries, feel free to raise a ticket here https://support.polygon.technology/support/home
 
