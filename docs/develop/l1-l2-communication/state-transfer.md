@@ -57,9 +57,12 @@ Use the `FxBaseChildTunnel` contract from [here](https://github.com/jdkanani/fx-
 
 ```jsx
 // npm i @maticnetwork/maticjs
+// for goerli - mumbai testnet
 const maticPOSClient = new require("@maticnetwork/maticjs").MaticPOSClient({
-  maticProvider: "https://rpc-mumbai.matic.today", // replace if using mainnet
-  parentProvider: "https://rpc.slock.it/goerli", // replace if using mainnet
+  network: "testnet", // when using mainnet, replace to "mainnet" 
+  version: "mumbai",  // when using mainnet, replace to "v1"
+  maticProvider: "https://rpc-mumbai.matic.today", // when using mainnet, replace to matic mainnet RPC endpoint
+  parentProvider: "https://rpc.slock.it/goerli", // when using mainnet, replace to ethereum mainnet RPC endpoint
 });
 const proof = maticPOSClient.posRootChainManager
   .customPayload(
